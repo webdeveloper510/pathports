@@ -1,0 +1,83 @@
+
+
+.add-button-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 15px;
+}
+
+.add-button{
+    background-color: #0389f9 !important;
+}
+button.btn.btn-primary.me-1.add-button.waves-effect.waves-float.waves-light {
+    box-shadow: 0 8px 25px -8px #0389f9 !important;
+}
+li.breadcrumb-item a {
+    color: #0389f9;
+}
+.checkbox-input:checked {
+    background-color: #0389f9;
+    border-color: #0389f9;
+}
+/*.main-menu .navbar-header .navbar-brand .brand-text {
+    color: #175ec6 !important;
+}
+.main-menu .navbar-header .navbar-brand .brand-text {
+    color: #175ec6 !important;
+}*/
+
+
+
+li.nav-item.me-auto {
+    width: 75%;
+}
+
+.main-menu .navbar-header {
+    height: 100%;
+    width: 260px;
+    height: 4.45rem;
+    position: relative;
+    padding: 0.35rem 1rem 0.3rem 1.64rem;
+    transition: 300ms ease all, background 0s;
+    display: flex;
+}
+img {
+    width: 100%;
+}
+
+a.navbar-brand {
+    margin: 0 !important;
+}
+
+.auth-wrapper .brand-logo.path-logo{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.schedule-date{
+    background-color: unset !important;
+}
+
+.card-datatable.table-responsive {
+    padding: 20px;
+}
+
+.interest-area-check {
+    display: inline-block;
+    margin-right: 1rem;
+    width: 240px;
+}
+
+.left_20 {
+    float: left;
+    width: 30%;
+}
+.select-role {
+    margin-bottom: 20px;
+}
