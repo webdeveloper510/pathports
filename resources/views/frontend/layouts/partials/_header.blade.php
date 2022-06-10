@@ -22,9 +22,11 @@
 	             <a href="#contact">Contact</a>
 	             <a href="#about">News</a>
 	          </div>
+	          <!-- <a href="http://127.0.0.1:8000/backend/login">Login</a> -->
 	          <div class="searchIcon">
-	             <input type="text" placeholder="Search.." name="search2">
-	             <button type="submit"><i class="fa fa-search"></i></button>
+	          	<a href="http://127.0.0.1:8000/backend/login">Login</a>
+	             <!-- <input type="text" placeholder="Search.." name="search2">
+	             <button type="submit"><i class="fa fa-search"></i></button> -->
 	          </div>
 	       </div>
 	       

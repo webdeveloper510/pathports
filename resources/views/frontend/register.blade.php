@@ -10,15 +10,17 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
   <link rel="stylesheet" href="{{ asset('/')}}assets/frontend/css/style.css">
   <link rel = "icon" type = "image/png" href = "{{ asset('/')}}assets/frontend/images/favicon.png">
 
 
 
-
+   <!--  <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/bootstrap.css"> -->
 
 	<!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/vendors/css/vendors.min.css">
@@ -38,6 +40,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/plugins/forms/form-validation.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/plugins/forms/form-wizard.css">
+
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -119,90 +122,7 @@
             </div>
             <div class="bs-stepper-content">
                 <div id="account-details-modern" class="content" role="tabpanel" aria-labelledby="account-details-modern-trigger">
-                    <!-- <div class="content-header">
-                        <h5 class="mb-0">Account Details</h5>
-                        <small class="text-muted">Enter Your Account Details.</small>
-                    </div> -->
-					 <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-firstname">Firstname</label>
-                            <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-lastname">Lastname</label>
-                            <input type="text" id="modern-lastname" class="form-control" placeholder="johndoe" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-username">Username</label>
-                            <input type="text" id="modern-username" class="form-control" placeholder="johndoe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">Email</label>
-                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-password">Password</label>
-                            <input type="password" id="modern-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
-                        </div>
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-confirm-password">Confirm Password</label>
-                            <input type="password" id="modern-confirm-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end mt-3">
-                       <!--  <button class="btn btn-outline-secondary btn-prev" disabled>
-                            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                        </button>
-                        <button class="btn btn-primary btn-next">
-                            <span class="align-middle d-sm-inline-block d-none">Next</span>
-                            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                        </button> -->
-                        <button class="btn btn-success btn-submit Submit_button">Submit</button>
-                    </div>
-                </div>
-                <div id="personal-info-modern" class="content" role="tabpanel" aria-labelledby="personal-info-modern-trigger">
-                    <!-- <div class="content-header">
-                        <h5 class="mb-0">Personal Info</h5>
-                        <small>Enter Your Personal Info.</small>
-                    </div> -->
-                   <!-- <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-first-name">First Name</label>
-                            <input type="text" id="modern-first-name" class="form-control" placeholder="John" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-last-name">Last Name</label>
-                            <input type="text" id="modern-last-name" class="form-control" placeholder="Doe" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-country">Country</label>
-                            <select class="select2 w-100" id="modern-country">
-                                <option label=" "></option>
-                                <option>UK</option>
-                                <option>USA</option>
-                                <option>Spain</option>
-                                <option>France</option>
-                                <option>Italy</option>
-                                <option>Australia</option>
-                            </select>
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-language">Language</label>
-                            <select class="select2 w-100" id="modern-language" multiple>
-                                <option>English</option>
-                                <option>French</option>
-                                <option>Spanish</option>
-                            </select>
-                        </div>
-                    </div>-->
-					
+                   
 					<div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="modern-firstname">Firstname</label>
@@ -215,62 +135,48 @@
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-username">Username</label>
+                            <label class="form-label" for="modern-username">Prefered Name</label>
                             <input type="text" id="modern-username" class="form-control" placeholder="johndoe" />
                         </div>
+                        
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-phone">Phone</label>
+                            <input type="text" id="modern-phone" class="form-control" aria-label="john.doe" />
+                        </div>
+                        
+                    </div>
+                    <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="modern-email">Email</label>
                             <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
                         </div>
-                    </div>
-                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-email">Alternate Email</label>
+                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
+                        </div>
+                        
                         <div class="mb-3 form-password-toggle col-md-6">
                             <label class="form-label" for="modern-password">Password</label>
-                            <input type="password" id="modern-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                            <input type="password" id="modern-password" class="form-control" />
                         </div>
                         <div class="mb-3 form-password-toggle col-md-6">
                             <label class="form-label" for="modern-confirm-password">Confirm Password</label>
-                            <input type="password" id="modern-confirm-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
-                        </div>
-                    </div>
-					
-                    <div class="d-flex justify-content-end mt-3">
-                        <!-- <button class="btn btn-primary btn-prev">
-                            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                        </button>
-                        <button class="btn btn-primary btn-next">
-                            <span class="align-middle d-sm-inline-block d-none">Next</span>
-                            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                        </button> -->
-                        <button class="btn btn-success btn-submit Submit_button">Submit</button>
-                    </div>
-                </div>
-                <div id="address-step-modern" class="content" role="tabpanel" aria-labelledby="address-step-modern-trigger">
-                    <!-- <div class="content-header">
-                        <h5 class="mb-0">Address</h5>
-                        <small>Enter Your Address.</small>
-                    </div> -->
-                  <!--  <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-address">Address</label>
-                            <input type="text" id="modern-address" class="form-control" placeholder="98  Borough bridge Road, Birmingham" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-landmark">Landmark</label>
-                            <input type="text" id="modern-landmark" class="form-control" placeholder="Borough bridge" />
+                            <input type="password" id="modern-confirm-password" class="form-control"  />
                         </div>
                     </div>
                     <div class="row">
+                        
                         <div class="mb-3 col-md-6">
-                            <label class="form-label" for="pincode3">Pincode</label>
-                            <input type="text" id="pincode3" class="form-control" placeholder="658921" />
+                            <label for="customFile1" class="form-label">Resume</label>
+                            <input class="form-control" type="file" id="formFile">
                         </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="city3">City</label>
-                            <input type="text" id="city3" class="form-control" placeholder="Birmingham" />
-                        </div>
-                    </div>-->
+                        
+                    </div>
+                    <div class="d-flex justify-content-end mt-3">
+                        <a href="http://127.0.0.1:8000/backend/login"><button class="btn btn-success btn-submit submit_button">Submit</button></a>
+                    </div>
+                </div>
+                <div id="personal-info-modern" class="content" role="tabpanel" aria-labelledby="personal-info-modern-trigger">
                    
 					
 					<div class="row">
@@ -285,63 +191,54 @@
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-username">Username</label>
+                            <label class="form-label" for="modern-username">Prefered Name</label>
                             <input type="text" id="modern-username" class="form-control" placeholder="johndoe" />
                         </div>
+                        
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-phone">Phone</label>
+                            <input type="text" id="modern-phone" class="form-control" aria-label="john.doe" />
+                        </div>
+                        
+                    </div>
+                    <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="modern-email">Email</label>
                             <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
                         </div>
-                    </div>
-                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-email">Alternate Email</label>
+                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
+                        </div>
+                        
                         <div class="mb-3 form-password-toggle col-md-6">
                             <label class="form-label" for="modern-password">Password</label>
-                            <input type="password" id="modern-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                            <input type="password" id="modern-password" class="form-control"  />
                         </div>
                         <div class="mb-3 form-password-toggle col-md-6">
                             <label class="form-label" for="modern-confirm-password">Confirm Password</label>
-                            <input type="password" id="modern-confirm-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
-                        </div>
-                    </div>
-					 <div class="d-flex justify-content-end mt-3">
-                       <!--  <button class="btn btn-primary btn-prev">
-                            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                        </button>
-                        <button class="btn btn-primary btn-next">
-                            <span class="align-middle d-sm-inline-block d-none">Next</span>
-                            <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
-                        </button> -->
-                        <button class="btn btn-success btn-submit Submit_button">Submit</button>
-                    </div>
-					
-                </div>
-                <div id="social-links-modern" class="content" role="tabpanel" aria-labelledby="social-links-modern-trigger">
-                    <!-- <div class="content-header">
-                        <h5 class="mb-0">Social Links</h5>
-                        <small>Enter Your Social Links.</small>
-                    </div> -->
-                 <!--   <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-twitter">Twitter</label>
-                            <input type="text" id="modern-twitter" class="form-control" placeholder="https://twitter.com/abc" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-facebook">Facebook</label>
-                            <input type="text" id="modern-facebook" class="form-control" placeholder="https://facebook.com/abc" />
+                            <input type="password" id="modern-confirm-password" class="form-control"  />
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-google">Google+</label>
-                            <input type="text" id="modern-google" class="form-control" placeholder="https://plus.google.com/abc" />
+                            <label class="form-label" for="modern-email">School ID-no SS#</label>
+                            <input type="text" id="modern-sid" class="form-control" placeholder="" aria-label="john.doe" />
                         </div>
                         <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-linkedin">Linkedin</label>
-                            <input type="text" id="modern-linkedin" class="form-control" placeholder="https://linkedin.com/abc" />
+                            <label for="customFile1" class="form-label">Resume</label>
+                            <input class="form-control" type="file" id="uni_image"  />
                         </div>
-                    </div>-->
+                        
+                    </div>
 					
+                    <div class="d-flex justify-content-end mt-3">
+                        
+                        <button class="btn btn-success btn-submit submit_button"><a href="http://127.0.0.1:8000/backend/login">Submit</a></button>
+                    </div>
+                </div>
+                <div id="address-step-modern" class="content" role="tabpanel" aria-labelledby="address-step-modern-trigger">
+                   
 					<div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="modern-firstname">Firstname</label>
@@ -354,31 +251,107 @@
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-username">Username</label>
+                            <label class="form-label" for="modern-username">Prefered Name</label>
                             <input type="text" id="modern-username" class="form-control" placeholder="johndoe" />
                         </div>
+                        
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-phone">Phone</label>
+                            <input type="text" id="modern-phone" class="form-control" aria-label="john.doe" />
+                        </div>
+                        
+                    </div>
+                    <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="modern-email">Email</label>
                             <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
                         </div>
-                    </div>
-                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-email">Alternate Email</label>
+                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
+                        </div>
+                        
                         <div class="mb-3 form-password-toggle col-md-6">
                             <label class="form-label" for="modern-password">Password</label>
-                            <input type="password" id="modern-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                            <input type="password" id="modern-password" class="form-control" />
                         </div>
                         <div class="mb-3 form-password-toggle col-md-6">
                             <label class="form-label" for="modern-confirm-password">Confirm Password</label>
-                            <input type="password" id="modern-confirm-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                            <input type="password" id="modern-confirm-password" class="form-control"/>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-email">School ID-no SS#</label>
+                            <input type="text" id="modern-sid" class="form-control" placeholder="" aria-label="john.doe" />
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="customFile1" class="form-label">Resume</label>
+                            <input class="form-control" type="file" id="uni_image"  />
+                        </div>
+                        
+                    </div>
+					 <div class="d-flex justify-content-end mt-3">
+                       
+                        <button class="btn btn-success btn-submit submit_button"><a href="http://127.0.0.1:8000/backend/login">Submit</a></button>
+                    </div>
+					
+                </div>
+                <div id="social-links-modern" class="content" role="tabpanel" aria-labelledby="social-links-modern-trigger">
+                    
+					<div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-firstname">Firstname</label>
+                            <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-lastname">Lastname</label>
+                            <input type="text" id="modern-lastname" class="form-control" placeholder="johndoe" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-username">Prefered Name</label>
+                            <input type="text" id="modern-username" class="form-control" placeholder="johndoe" />
+                        </div>
+                        
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-phone">Phone</label>
+                            <input type="text" id="modern-phone" class="form-control" aria-label="john.doe" />
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-email">Email</label>
+                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label" for="modern-email">Alternate Email</label>
+                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
+                        </div>
+                        
+                        <div class="mb-3 form-password-toggle col-md-6">
+                            <label class="form-label" for="modern-password">Password</label>
+                            <input type="password" id="modern-password" class="form-control"  />
+                        </div>
+                        <div class="mb-3 form-password-toggle col-md-6">
+                            <label class="form-label" for="modern-confirm-password">Confirm Password</label>
+                            <input type="password" id="modern-confirm-password" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="mb-3 col-md-6">
+                            <label for="customFile1" class="form-label">Resume</label>
+                            <input class="form-control" type="file" id="uni_image"  />
+                        </div>
+                        
                     </div>
 					
                     <div class="d-flex justify-content-end mt-3">
-                        <!-- <button class="btn btn-primary btn-prev">
-                            <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
-                            <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                        </button> -->
-                        <button class="btn btn-success btn-submit Submit_button">Submit</button>
+                        
+                        <button class="btn btn-success btn-submit submit_button"><a href="http://127.0.0.1:8000/backend/login">Submit</a></button>
                     </div>
                 </div>
             </div>

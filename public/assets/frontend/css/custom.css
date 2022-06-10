@@ -395,9 +395,15 @@ li::marker {
 
 .searchIcon {
 
+    
     float: right;
-
-    margin-left: 100px;
+    margin-left: 266px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #175ec6;
+    text-align: right;
+    width: 80px;
 
 }
 
@@ -568,6 +574,7 @@ li::marker {
     font-size: 14px;
 
     font-weight: 600;
+    text-decoration: none;
 
 }
 
@@ -2123,24 +2130,31 @@ color: #333333 !important;
 	color: #333333 !important;
 }
 
-button.Submit_button {
+button.submit_button {
     border-color: #0389f9 !important;
     background-color: #0389f9 !important;
     color: #fff !important;
 }
-button.Submit_button:hover:not(.disabled):not(:disabled) {
+button.submit_button:hover:not(.disabled):not(:disabled) {
     box-shadow: 0 8px 25px -8px #0389f9 !important;
 }
 
 
 
-button.Submit_button:focus, button.Submit_button:active, button.Submit_button.active {
+button.submit_button:focus, button.submit_button:active, button.submit_button.active {
     color: #fff;
     background-color: #0389f9 !important;
 }
 
-button.Submit_button.focus, button.Submit_button:focus {
+button.submit_button.focus, button.submit_button:focus {
     box-shadow: 0 0 0 0.2rem rgb(11 137 249) !important;
+}
+
+
+
+.submit_button a {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* register page css end*/

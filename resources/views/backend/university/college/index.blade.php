@@ -1,10 +1,6 @@
 @extends('backend.layouts.app')
 
-
-
 @section('title','University List || PathPorts')
-
-
 
 @section('content')
 
@@ -12,9 +8,6 @@
 <div class="content-wrapper container-xxl p-0">
 
     <div class="content-header row">
-
-
-
     </div>
 
     <div class="content-body">
@@ -26,7 +19,7 @@
 
 
             <div class="add-button-div">
-                 <a class="btn btn-icon btn-primary waves-effect waves-float waves-light add-button" href="{{route('backend.universities.create')}}">Add University</a>
+                 <a class="btn btn-icon btn-primary waves-effect waves-float waves-light add-button" href="">Add Colleges</a>
 
 
                <!--  <button type="button" class="btn btn-icon btn-primary waves-effect waves-float waves-light add-button" href="{{route('backend.universities.create')}}">
@@ -86,19 +79,15 @@
 
                         </thead>
                         <tbody>
-                            @foreach($university as $university_data)
+                            
                             <tr>
                                 <td></td>
-                                <td>{{$university_data->uni_name}}</td>
-                                <td>{{$university_data->uni_email}}</td>
-                                <td>{{$university_data->uni_desc}}</td>
-                                <td>{{$university_data->uni_address}}</td>
-                                <td>{{$university_data->uni_contact}}</td>
-
-                                <td><img src="{{ asset('/assets/backend/images/'.$university_data->uni_image)}}"
- style="height: 100px; width: 100px;"></td>
-
-
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                
                                 <td><span class="badge badge-pill badge-light-success mr-1">Active</span></td>
                                 <td>
                                     <div class="dropdown">
@@ -106,39 +95,29 @@
                                             <i data-feather="more-vertical"></i>
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <!-- <a class="dropdown-item" href="#">
-                                                <i data-feather="edit-2" class="me-50"></i>
-                                                <span>Edit</span>
-                                            </a> -->
-
                                             
-                                                <button value="{{ $university_data->id }}" class="dropdown-item">
-                                                    <!-- <a class="" href="{{url('backend/universities/1/edit')}}"> -->
-                                                    <a class="" href="{{ route('backend.universities.edit', ['university' => $university_data->id]) }}">
+                                            
+                                                <button value="" class="dropdown-item">
+                                                   
+                                                    <a class="" href="">
                                                 <i data-feather="edit-2" class="me-50 editbtn"></i>
                                                 <span>Edit</span></a>
                                                 </button>
                                            
                                             
-                                            <form action="{{ route('backend.universities.destroy', ['university' => $university_data->id]) }}" method="post">
-                                                @csrf
-
-                                                {{ method_field('DELETE') }}
+                                            
 
                                                 <button class="dropdown-item">
                                                 <i data-feather="trash" class="me-50"></i>
                                                 <span>Delete</span>
                                                 </button>
-                                            <!-- <a class="dropdown-item" href="{{ route('backend.universities.destroy', ['university' => $university_data->id]) }}">
-                                                <i data-feather="trash" class="me-50"></i>
-                                                <span>Delete</span>
-                                            </a> -->
+                                         
                                             </form>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
+                    
                             
                         </tbody>
 
@@ -146,11 +125,6 @@
                     </table>
 
                 </div>
-
-
-
-
-
 
             </div>
 
@@ -187,29 +161,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
 
 
-
-
-
-
-
     <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/pages/modal-create-app.css">
-
-
-
-
-
-
-
-
 
 @endsection
 
 
 
 @section('scripts')
-
-
-
 
 
     <!-- BEGIN: Page Vendor JS-->
@@ -251,33 +209,8 @@
     $(document).ready( function () {
 
         $('#university_table').DataTable();
-
-
-        
-
     });
-    /*$(document).on('click', '.editbtn',function () {
-        var id = $(this).val();
-        
-        $('#editUniversity').modal('show');
-        $.ajax({
-            type:"GET",
-            
-            url:"/backend/universities/1/edit",
-            dataType: 'json',
-            success: function (res){
-                console.log(res);
-                $('#edit_uni_name').val(res.university.uni_name);
-                $('#edit_uni_email').val(res.university.uni_email);
-                $('#edit_uni_desc').val(res.university.uni_desc);
-                $('#edit_uni_address').val(res.university.uni_address);
-                $('#edit_uni_contact').val(res.university.uni_contact);
-                $('#edit_uni_alternate_contact').val(res.university.uni_alternate_contact);
-            }
 
-        });
-
-    });*/
 
     </script>
 
