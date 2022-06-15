@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use App\Models\University;
+
 
 
 class UniversityController extends Controller
@@ -46,6 +48,7 @@ class UniversityController extends Controller
         $request->validate(
             [
                 'uni_name'              =>      'required|string|max:255',
+                'uni_slug'              =>      'required',
                 'uni_email'             =>      'required|email|unique:users,email',
                 'uni_desc'              =>      'required|string',
                 'uni_address'           =>      'required|string',
@@ -55,6 +58,7 @@ class UniversityController extends Controller
             ], 
             [
                 'uni_name.required' => 'University Name is required',
+                'uni_slug.required' => 'University Slug Name is required',
                 'uni_email.required' => 'Email is required',
                 'uni_desc.required' => 'Description is required',
                 'uni_address.required' => 'Address is required',
@@ -75,6 +79,7 @@ class UniversityController extends Controller
         $dataArray  = University::create([
        
             "uni_name"  =>   $request->uni_name,
+            "uni_slug"  =>   Str::slug($request->uni_slug),
             "uni_email" =>   $request->uni_email,
             "uni_desc"   =>  $request->uni_desc,
             "uni_address" =>  $request->uni_address,

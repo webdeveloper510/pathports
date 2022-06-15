@@ -16,6 +16,7 @@ class CreateUniversitiesTable extends Migration
         Schema::create('universities', function (Blueprint $table) {
             $table->id();
             $table->string('uni_name');
+            $table->string('uni_slug'); 
             $table->string('uni_email');
             $table->text('uni_desc');
             $table->string('uni_address');

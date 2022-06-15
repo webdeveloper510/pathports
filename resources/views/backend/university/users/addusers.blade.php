@@ -1,11 +1,5 @@
 @extends('backend.layouts.app')
-
-
-
-@section('title','Interest Area List || PathPorts')
-
-
-
+@section('title','Add Administrator List || PathPorts')
 @section('content')
 
 
@@ -24,7 +18,7 @@
 
                     <div class="col-12">
 
-                        <h2 class="content-header-title float-start mb-0">Add university</h2>
+                        <h2 class="content-header-title float-start mb-0">Add Administrator</h2>
 
                        
                     </div>
@@ -42,12 +36,6 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
-
-        <!-- @if($message = session('succes_message'))
-        swal("{{ $message }}");
-        @endif -->
-    
-     
 
         <div class="content-body">
 
@@ -67,23 +55,31 @@
 
                             <div class="card-body">
 
-                                <form id="addUniversityForm" class="row gy-1 pt-75" method="POST" action="{{route('backend.universities.store')}}" enctype="multipart/form-data">
+                                <form id="addUniversityForm" class="row gy-1 pt-75" method="POST" action="{{route('backend.users.store')}}" enctype="multipart/form-data">
                                 @csrf
                                     <div class="col-12 col-md-6">
 
-                                        <label class="form-label" for="modalEditUserFirstName">University Name</label>
+                                        <label class="form-label" for="modalEditUserFirstName">First Name</label>
 
-                                        <input type="text" id="uni_name" name="uni_name" value="{{old('uni_name')}}" class="form-control @error('uni_name') is-invalid @enderror" placeholder="John"  data-msg="Please enter your first name" />
-                                        @error('uni_name')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                                        <input type="text" id="firstName" name="firstName" value="{{old('firstName')}}" class="form-control @error('firstName') is-invalid @enderror" placeholder="John"  data-msg="Please enter your first name" />
+                                        @error('firstName')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                                    </div>
+                                    <div class="col-12 col-md-6">
+
+                                        <label class="form-label" for="modalEditUserFirstName">Last Name</label>
+
+                                        <input type="text" id="lastName" name="lastName" value="{{old('lastName')}}" class="form-control @error('lastName') is-invalid @enderror" placeholder="John"  data-msg="Please enter your first name" />
+                                        @error('lastName')<div class="invalid-feedback"> {{ $message }} </div>@enderror
 
                                     </div>
 
                                     <div class="col-12 col-md-6">
 
-                                        <label class="form-label" for="modalEditUserFirstName">Slug</label>
+                                        <label class="form-label" for="modalEditUserFirstName">Username</label>
 
-                                        <input type="text" id="uni_slug" name="uni_slug" value="{{old('uni_slug')}}" class="form-control @error('uni_slug') is-invalid @enderror" placeholder="John"  data-msg="Please enter your slug" />
-                                        @error('uni_slug')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                                        <input type="text" id="username" name="username" value="{{old('username')}}" class="form-control @error('username') is-invalid @enderror"   data-msg="Please enter your Username" />
+                                        @error('username')<div class="invalid-feedback"> {{ $message }} </div>@enderror
 
                                     </div>
 
@@ -93,55 +89,50 @@
 
                                     <div class="col-12 col-md-6">
 
-                                        <label class="form-label" for="modalEditUserEmail">Official Email:</label>
+                                        <label class="form-label" for="modalEditUserEmail">Email:</label>
 
-                                        <input type="text" id="uni_email" name="uni_email" value="{{old('uni_email')}}" class="form-control @error('uni_email') is-invalid @enderror"  placeholder="example@domain.com" />
-                                         @error('uni_email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                                        <input type="text" id="email" name="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror"  placeholder="example@domain.com" />
+                                         @error('email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                                    </div>
+
+                                    
+
+                                    
+
+                                    
+
+                                    <div class="col-12 col-md-6">
+
+                                        <label class="form-label" for="basicInput">Password</label>
+
+                                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="basicInput" />
+                                        @error('password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
 
                                     </div>
 
                                     <div class="col-12 col-md-6">
 
-                                        <label class="form-label" for="exampleFormControlTextarea1">University Description</label>
+                                        <label class="form-label" for="basicInput">Confirm Password</label>
 
-                                        <textarea class="form-control  @error('uni_desc') is-invalid @enderror" id="uni_desc"  name="uni_desc" rows="3" placeholder="University Description"></textarea>
-                                        @error('uni_desc')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                                        <input type="password" name="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror" id="basicInput"  />
+                                        @error('confirm_password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
 
                                     </div>
-
                                     <div class="col-12 col-md-6">
 
-                                        <label class="form-label" for="exampleFormControlTextarea1">University Address</label>
-
-                                        <textarea class="form-control  @error('uni_address') is-invalid @enderror" id="uni_address" name="uni_address" rows="3" placeholder="University Address"></textarea> @error('uni_address')<div class="invalid-feedback"> {{ $message }} </div>@enderror
-
+                                        <label class="form-label" for="basicSelect">University Name</label>
+                                        <select class="form-select form-control @error('university_id') is-invalid @enderror" id="university_id" name="university_id">
+                                            <option>Select University</option>
+                                            @foreach($university as $uni_data)
+                                            <option value="{{$uni_data->id}}">{{$uni_data->uni_name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('university_id')<div class="invalid-feedback"> {{ $message }} </div>@enderror
                                     </div>
+                                    
 
-                                    <div class="col-12 col-md-6">
-
-                                        <label class="form-label" for="modalEditUserPhone">Contact</label>
-
-                                        <input type="text" id="uni_contact" value="{{old('uni_contact')}}" name="uni_contact" class="form-control  @error('uni_contact') is-invalid @enderror" />
-                                        @error('uni_contact')<div class="invalid-feedback"> {{ $message }} </div>@enderror
-
-                                    </div>
-
-                                    <div class="col-12 col-md-6">
-
-                                        <label class="form-label" for="modalEditUserPhone">Alternate Contact</label>
-
-                                        <input type="text" value="{{old('uni_alternate_contact')}}" name="uni_alternate_contact" class="form-control @error('uni_alternate_contact') is-invalid @enderror   phone-number-mask" />
-                                         @error('uni_alternate_contact')<div class="invalid-feedback"> {{ $message }} </div>@enderror
-
-                                    </div>
-
-                                    <div class="col-12 col-md-6">
-
-                                        <label for="customFile1" class="form-label">Image</label>
-
-                                        <input class="form-control" type="file" name="uni_image" id="uni_image"  />
-
-                                    </div>
+                                    
 
                                  
 
@@ -149,8 +140,7 @@
 
                                         <button type="submit" class="btn btn-primary me-1 add-button">Add</button>
 
-                                        <!-- <button type="submit" class="btn btn-outline-success" id="type-success">Add</button> -->
-
+                                        
                                         <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">
 
                                             Discard

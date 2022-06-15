@@ -1,3 +1,8 @@
+
+
+
+
+
 @extends('backend.layouts.app')
 
 
@@ -7,6 +12,8 @@
 
 
 @section('content')
+
+
 
 
 
@@ -24,28 +31,9 @@
 
                     <div class="col-12">
 
-                        <h2 class="content-header-title float-start mb-0">Interest Areas</h2>
+                        <h2 class="content-header-title float-start mb-0">Edit university</h2>
 
-                        <div class="breadcrumb-wrapper">
-
-                            <ol class="breadcrumb">
-
-                                <li class="breadcrumb-item"><a href="index.html">Interest Areas</a>
-
-                                </li>
-
-                                <li class="breadcrumb-item"><a href="#">Lists</a>
-
-                                </li>
-
-                                <li class="breadcrumb-item active">Add Interest Areas
-
-                                </li>
-
-                            </ol>
-
-                        </div>
-
+                       
                     </div>
 
                 </div>
@@ -74,72 +62,96 @@
 
                             <div class="card-body">
 
-                                <form id="editUserForm" class="row gy-1 pt-75" onsubmit="return false">
+                              <form id="editUsersForm" class="row gy-1 pt-75" action="{{ route('backend.users.update',$users->id) }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                {{ method_field('PUT') }}
+                                    <div class="col-12 col-md-6">
 
+                                        <label class="form-label" for="modalEditUserFirstName">First Name</label>
 
+                                        <input type="text" id="firstName" name="firstName" value="{{$users->firstName}}" class="form-control" />
+                                      
 
-                                    <div class="col-12 col-md-12">
+                                    </div>
+                                    <div class="col-12 col-md-6">
 
-                                        <div class="row">
+                                        <label class="form-label" for="modalEditUserFirstName">Last Name</label>
 
-                                            <h1>Interest Areas</h1>
-                                            <br>
-                                            <div class="col-12 col-md-6">
+                                        <input type="text" id="lastName" name="lastName" value="{{$users->lastName}}" class="form-control"/>
+                                        
 
-                                                <label class="form-label" for="basicSelect">Category</label>
+                                    </div>
 
-                                                <select class="form-select" id="interest_areas_category">
-                                                    <option>Select Category</option>
-                                                    @foreach($interest_areas_category as $category_data)
-                                                   
-                                                    <option value="{{$category_data->id}}">{{$category_data->category_name}}</option>
-                                                    @endforeach
-                                                </select>
+                                    <div class="col-12 col-md-6">
 
-                                            </div>
-                                            <br>
-                                            <div class="col-12 col-md-6">
+                                        <label class="form-label" for="modalEditUserFirstName">Username</label>
 
-                                                <label class="form-label" for="basicSelect">SubCategory</label>
-                                                
-                                                <select class="form-select" id="interest_areas_subcategory">
-                                                    <option>Select Sub Category</option>
-                                                    @foreach($interest_areas_subcategory as $subcategory_data)
-                                                    <option value="{{$subcategory_data->id}}">{{$subcategory_data->subcategory_name}}</option>
-                                                    @endforeach
-                                                </select>
-
-                                            </div>
-
-                                            <br>
-
-                                            <div class="demo-inline-spacing">
-                                                <div class="d-flex interest_area_checkbox" id=" interest_area_checkbox">
-                                                @foreach($interest_areas as $interest_areas_data)
-                                                
-                                                    <div class="form-check form-check-inline interest-area-check">
-
-                                                        <input class="form-check-input checkbox-input" type="checkbox" id="inlineCheckbox1" value="checked" >
-
-                                                        <label class="form-check-label" for="inlineCheckbox1">{{$interest_areas_data->interest_area_name}}</label>
-
-                                                    </div>
-                                                @endforeach
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <input type="text" id="username" name="username" value="{{$users->username}}" class="form-control" />
                                     </div>
 
 
 
+
+
+                                    <div class="col-12 col-md-6">
+
+                                        <label class="form-label" for="modalEditUserEmail">Email:</label>
+
+                                        <input type="text" id="email" name="email" value="{{$users->email}}" class="form-control" />
+                                    </div>
+
+                                    
+                                    <div class="col-12 col-md-6">
+
+                                        <label class="form-label" for="basicInput">Password</label>
+
+                                        <input type="password" class="form-control" id="basicInput" placeholder="Enter Username" />
+
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+
+                                        <label class="form-label" for="basicInput">Confirm Password</label>
+
+                                        <input type="password" class="form-control" id="basicInput" placeholder="Enter Username" />
+
+                                    </div>
+                                    <div class="col-12 col-md-6">
+
+                                        <label class="form-label" for="basicSelect">University Name</label>
+                                        <select class="form-select" id="university_name" name="university_id">
+                                            @foreach($university as $university_data)
+                                           
+                                            <option value="{{ $university_data->id }}" {{ $users->university_id == $university_data->id  ? 'selected' : ''}}>{{ $university_data->uni_name}}</option>
+                                            @endforeach
+                                            
+                                        </select>
+                                    </div>
+                                    
+
+                                    <div class="col-12 col-md-6">
+
+                                        <label for="customFile1" class="form-label">Image</label>
+
+                                        <input class="form-control" type="file" name="image" id="image"  />
+
+                                    </div>
+
+                                 
+
                                     <div class="col-12 text-center mt-2 pt-50">
 
-                                        <button type="submit" class="btn btn-primary me-1 add-button">Save</button>
+                                        <button type="submit" class="btn btn-primary me-1 add-button">Update</button>
+
+                                        <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">
+
+                                            Discard
+
+                                        </button>
 
                                     </div>
 
                                 </form>
-
                             </div>
 
                         </div>
@@ -281,22 +293,6 @@
             });
         });
     });
-
-    $(document).on('change','.checkbox-input',function(){
-           // total allowed to be checked.
-            var max_allowed = 5;
-               // count how many boxes have been checked.
-            var checked = $(".checkbox-input:checked").length;
-          
-               // perform test
-            if ( checked > max_allowed ) {
-                   // is more than the max so uncheck.
-                $(this).attr("checked", false);
-                   // display error message.
-                alert("Please select a maximum of " + max_allowed + " options.");
-            }
-    });
-   
     </script>
 
 

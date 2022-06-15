@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('loginAttempt');
 
-
 Route::group(['middleware' => ['auth:backend','permitted']], function () {
 
    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
@@ -30,6 +29,10 @@ Route::group(['middleware' => ['auth:backend','permitted']], function () {
    Route::post('/getSubCatData', [InterestAreasController::class, 'get_sub_data'])->name('getSubCatData');
    
    Route::resource('universities','UniversityController');
+   Route::resource('users','UserController');
+
+  // Route::get('/{uni_slug?}', [DashboardController::class, 'index'])->name('dashboard');
+
 
    Route::get('/collegeList', [CollegeController::class, 'index'])->name('collegeList');
 });
@@ -38,7 +41,9 @@ Route::get('/university_list', function () {
    return view('backend.university.university_list');
 });
 
-
+/*Route::get('/users', function () {
+   return view('backend.university.users.index');
+});*/
 /*Route::get('/college_list', function () {
    return view('backend.university.college.college_list');
 });*/

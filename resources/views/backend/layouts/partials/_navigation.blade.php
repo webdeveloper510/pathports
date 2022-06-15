@@ -35,20 +35,18 @@
 
                 <ul class="menu-content">
 
-                    <li><a class="d-flex align-items-center" href="{{route('backend.universities.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">University List</span></a>
+                    <li><a class="d-flex align-items-center" href="{{route('backend.universities.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">University List</span></a></li> 
 
-                    </li> 
-                    <li><a class="d-flex align-items-center" href="{{ route('backend.collegeList') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Collages and Schools</span></a>
+                   
+                        <li><a class="d-flex align-items-center" href="{{route('backend.users.index')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">University Administrators</span></a></li> 
+                  
+                    
 
-                    </li>
-                    <li><a class="d-flex align-items-center" href="{{url('/backend/team_list')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Teams</span></a>
 
-                    </li>
 
-                    <!-- <li><a class="d-flex align-items-center" href="{{url('/university_view')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="View">View</span></a>
+                    <li><a class="d-flex align-items-center" href="{{ route('backend.collegeList') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Collages and Schools</span></a></li>
 
-                    </li> -->
-
+                    <li><a class="d-flex align-items-center" href="{{url('/backend/team_list')}}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="List">Teams</span></a></li>
                 </ul>
 
             </li>

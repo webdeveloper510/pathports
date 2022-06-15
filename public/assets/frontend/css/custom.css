@@ -12,7 +12,8 @@ div.text-navbar {
 
     align-items: center;
 
-    justify-content: center;
+    justify-content: end;
+    margin-right: 20px;
 
 }
 
@@ -30,13 +31,14 @@ div.text-navbar {
 
 .logo-img {
 
-    width: 100%;
+    width: 43%;
 
 }
 
 .logo-img a {
     padding: 0px 0px 0px 20px;
     height: 100% !important;
+    width: 100%;
 
 }
 
@@ -62,7 +64,7 @@ div.text-navbar {
 
 .darkback {
 
-    background-color: #f9f9f9 !important;
+    background-color: #ffffff !important;
 
 	margin-bottom: 0 !important;
 
@@ -1477,7 +1479,7 @@ h4.ContentArea{
 
     background: #fff;
 
-    padding: 66px 40px;
+    padding: 40px 85px;
 
     border-radius: 0 0 10px 10px;
 

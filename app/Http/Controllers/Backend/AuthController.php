@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\University;
 
 class AuthController extends Controller
 {
@@ -23,7 +24,9 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
+       
         
+
         $this->validate($request, [
             'email'   => 'required|email|exists:users',
             'password' => 'required|min:6'
@@ -33,6 +36,8 @@ class AuthController extends Controller
             'password' => $request->password
         ], $request->get('remember'))) {
             return redirect()->intended(route('backend.dashboard'));
+
+         
         }
         return back()->withInput($request->only('email', 'remember'))
             ->withErrors(['password' => 'Please check your password.']);

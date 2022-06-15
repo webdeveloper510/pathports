@@ -137,18 +137,7 @@
 
                                     </div>
 
-                                    <div class="col-12 col-md-6">
-
-                                        <label for="customFile1" class="form-label">Image</label>
-
-                                        <input class="form-control" type="file" name="uni_image" id="uni_image"  />
-                                        <!-- <img src="{{ asset('/assets/backend/images/'.$university->uni_image)}}"
- style="height: 100px; width: 100px;"> -->
-                                        <a href="{{ asset('/assets/backend/images/'.$university->uni_image)}}" download>
-                                        <img src="{{ asset('/')}}assets/backend/images/pdf-img.png" style="height: 80px; width: 80px;"></a>
-
-
-                                    </div>
+                                    
 
                                     
 

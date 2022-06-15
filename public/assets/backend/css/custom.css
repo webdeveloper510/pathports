@@ -31,13 +31,13 @@ li.breadcrumb-item a {
 
 
 li.nav-item.me-auto {
-    width: 75%;
+    width: 50%;
 }
 
 .main-menu .navbar-header {
-    height: 100%;
-    width: 260px;
-    height: 4.45rem;
+    height: unset;
+    width: unset;
+    height: unset;
     position: relative;
     padding: 0.35rem 1rem 0.3rem 1.64rem;
     transition: 300ms ease all, background 0s;
@@ -54,10 +54,10 @@ a.navbar-brand {
 .auth-wrapper .brand-logo.path-logo{
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 35%;
     margin: 0 auto;
     margin-bottom: 20px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
 }
 
 .schedule-date{

@@ -22,7 +22,7 @@
 
    <!--  <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/bootstrap.css"> -->
 
-	<!-- BEGIN: Vendor CSS-->
+    <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/vendors/css/forms/wizard/bs-stepper.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/vendors/css/forms/select/select2.min.css">
@@ -91,7 +91,7 @@
                         </span>
                     </button>
                 </div>
-				<div class="line">
+                <div class="line">
                    <!-- <i data-feather="chevron-right" class="font-medium-2"></i>-->
                 </div>
                 <div class="step" data-target="#address-step-modern" role="tab" id="address-step-modern-trigger">
@@ -123,7 +123,7 @@
             <div class="bs-stepper-content">
                 <div id="account-details-modern" class="content" role="tabpanel" aria-labelledby="account-details-modern-trigger">
                    
-					<div class="row">
+                    <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="modern-firstname">Firstname</label>
                             <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
@@ -178,8 +178,8 @@
                 </div>
                 <div id="personal-info-modern" class="content" role="tabpanel" aria-labelledby="personal-info-modern-trigger">
                    
-					
-					<div class="row">
+                    
+                    <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="modern-firstname">Firstname</label>
                             <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
@@ -231,7 +231,7 @@
                         </div>
                         
                     </div>
-					
+                    
                     <div class="d-flex justify-content-end mt-3">
                         
                         <button class="btn btn-success btn-submit submit_button"><a href="http://127.0.0.1:8000/backend/login">Submit</a></button>
@@ -239,7 +239,7 @@
                 </div>
                 <div id="address-step-modern" class="content" role="tabpanel" aria-labelledby="address-step-modern-trigger">
                    
-					<div class="row">
+                    <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="modern-firstname">Firstname</label>
                             <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
@@ -291,15 +291,15 @@
                         </div>
                         
                     </div>
-					 <div class="d-flex justify-content-end mt-3">
+                     <div class="d-flex justify-content-end mt-3">
                        
                         <button class="btn btn-success btn-submit submit_button"><a href="http://127.0.0.1:8000/backend/login">Submit</a></button>
                     </div>
-					
+                    
                 </div>
                 <div id="social-links-modern" class="content" role="tabpanel" aria-labelledby="social-links-modern-trigger">
                     
-					<div class="row">
+                    <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="modern-firstname">Firstname</label>
                             <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
@@ -348,7 +348,7 @@
                         </div>
                         
                     </div>
-					
+                    
                     <div class="d-flex justify-content-end mt-3">
                         
                         <button class="btn btn-success btn-submit submit_button"><a href="http://127.0.0.1:8000/backend/login">Submit</a></button>
