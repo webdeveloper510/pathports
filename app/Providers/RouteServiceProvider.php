@@ -24,7 +24,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const BACKEND_HOME = '/backend';
+    //public const BACKEND_HOME = '/admin';
 
     /**
      * The controller namespace for the application.
@@ -48,12 +48,12 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
 
-            //separate route for backend
-            Route::prefix('backend')
+            //separate route for admin
+            /*Route::prefix('admin')
                 ->middleware('web')
-                ->namespace($this->namespace.'\Backend')
-                ->as('backend.')
-                ->group(base_path('routes/backend.php'));
+                ->namespace($this->namespace.'\Admin')
+                ->as('admin.')
+                ->group(base_path('routes/backend.php'));*/
 
             Route::prefix('api')
                 ->middleware('api')

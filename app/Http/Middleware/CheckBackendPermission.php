@@ -17,7 +17,8 @@ class CheckBackendPermission
      */
     public function handle(Request $request, Closure $next)
     {
-        $user = Auth::guard('backend')->user();
+        $user = Auth::guard('web')->user();
+        
 //        dd($request);
         return $next($request);
     }

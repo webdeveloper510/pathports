@@ -1,17 +1,19 @@
 <?php
 
-use App\Http\Controllers\Backend\AuthController;
-use App\Http\Controllers\Backend\DashboardController;
-use App\Http\Controllers\Backend\InterestAreasController;
-use App\Http\Controllers\Backend\CollegeController;
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\InterestAreasController;
+use App\Http\Controllers\Admin\CollegeController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\AluminiController;
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Backend Routes
+| Admin Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register backend routes for your application. These
+| Here is where you can register admin routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
@@ -19,73 +21,50 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('loginAttempt');
 
-Route::group(['middleware' => ['auth:backend','permitted']], function () {
+Route::group(['middleware' => ['auth:admin','permitted']], function () {
 
    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-   Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+   Route::get('/dashboard/{id?}', [DashboardController::class, 'index'])->name('dashboard');
+
+   Route::resource('universities','UniversityController');
+   Route::resource('graduate','GraduateController');
+   Route::resource('alumini','AluminiController');
+   Route::resource('users','UserController');
+
    Route::get('/interestAreas', [InterestAreasController::class, 'index'])->name('interestAreas');
 
    Route::post('/getData', [InterestAreasController::class, 'get_data'])->name('getData');
    Route::post('/getSubCatData', [InterestAreasController::class, 'get_sub_data'])->name('getSubCatData');
    
-   Route::resource('universities','UniversityController');
-   Route::resource('users','UserController');
+   
 
-  // Route::get('/{uni_slug?}', [DashboardController::class, 'index'])->name('dashboard');
-
-
+   Route::get('/universityadAdmin/{id}', [UserController::class, 'university_admin_view'])->name('universityAdmin');
+   Route::get('/profile/{id}', [UserController::class, 'profile'])->name('profile');
+   Route::put('/update_profile/{id}', [UserController::class, 'profile_update'])->name('update_profile');
    Route::get('/collegeList', [CollegeController::class, 'index'])->name('collegeList');
-});
-
-Route::get('/university_list', function () {
-   return view('backend.university.university_list');
-});
-
-/*Route::get('/users', function () {
-   return view('backend.university.users.index');
-});*/
-/*Route::get('/college_list', function () {
-   return view('backend.university.college.college_list');
-});*/
+   
+   //Route::get('/{uni_slug?}', [DashboardController::class, 'index'])->name('dashboard');
 
 
-Route::get('/graduates_list', function () {
-   return view('backend.graduates.graduates_list');
-});
-Route::get('/graduatesCreate', function () {
-   return view('backend.graduates.add_graduates');
-});
 
-Route::get('/alumini_list', function () {
-   return view('backend.alumini.alumini_list');
-});
-Route::get('/aluminiCreate', function () {
-   return view('backend.alumini.add_alumini');
-});
+   Route::get('/booster_list', function () {
+      return view('admin.booster.booster_list');
+   });
 
-Route::get('/booster_list', function () {
-   return view('backend.booster.booster_list');
-});
+   Route::get('/meetings_list', function () {
+      return view('admin.meetings.meetings_list');
+   });
 
-/*Route::get('/interest_area_list', function () {
-   return view('backend.interestArea.interest_area_list');
-});*/
+   Route::get('/schedule_meeting', function () {
+      return view('admin.meetings.schedule_meeting');
+   });
+   Route::get('/permissions', function () {
+      return view('admin.permissions');
+   });
+   Route::get('/university_list', function () {
+      return view('admin.university.university_list'); 
+   });
 
-Route::get('/meetings_list', function () {
-   return view('backend.meetings.meetings_list');
-});
+}); 
 
-Route::get('/schedule_meeting', function () {
-   return view('backend.meetings.schedule_meeting');
-});
-Route::get('/test', function () {
-   return view('backend.university.test');
-});
 
-Route::get('/profile', function () {
-   return view('backend.profile');
-});
-
-Route::get('/permissions', function () {
-   return view('backend.permissions');
-});

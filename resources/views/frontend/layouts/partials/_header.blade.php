@@ -1,58 +1,41 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark darkback p-0">
-	 <div class="left-section">
-	    <div class="logo-img"> <a class="navbar-brand" href="#"><img src="{{ asset('/')}}assets/frontend/images/path-logo.png" alt="path-logo"></a></div>
-	 </div>
-	 <div class="right-section">
-	    <!-- top header  -->
-	    <div class="headerRightTop">
-	       <div class="utilityMenu">
-	          <div class="topnav" id="myTopnav">
-	             <div class="dropdown">
-	                <button class="dropbtn">Resources  
-	                <i class="fa fa-caret-down"></i>
-	                </button>
-	                <div class="dropdown-content">
-	                   <a href="#">Alumini</a>
-	                   <a href="#">University </a>
-	                   <a href="#">Faculty & Staff</a>
-	                </div>
-	             </div>
-	             <a href="{{url('/home')}}" class="active">Home</a>
-	             <a href="#news">About</a>
-	             <a href="#contact">Contact</a>
-	             <a href="#about">News</a>
-	          </div>
-	          <!-- <a href="http://127.0.0.1:8000/backend/login">Login</a> -->
-	          <div class="searchIcon">
-	          	<a href="http://127.0.0.1:8000/backend/login">Login</a>
-	             <!-- <input type="text" placeholder="Search.." name="search2">
-	             <button type="submit"><i class="fa fa-search"></i></button> -->
-	          </div>
-	       </div>
-	       
-	    </div>
-	    <!-- top header  -->
-	    <div class="header-bottom">
-	       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-	       <span class="navbar-toggler-icon"></span>
-	       </button>
-	       <div class="collapse navbar-collapse text-navbar" id="collapsibleNavbar">
-	          <ul class="navbar-nav">
-	             <li class="nav-item">
-	                <a class="nav-link" href="#">university</a>
-	             </li>
-	             <li class="nav-item">
-	                <a class="nav-link" href="#">Student</a>
-	             </li>
-	             <li class="nav-item">
-	                <a class="nav-link" href="#">Alumni</a>
-	             </li>
-	             <li class="nav-item">
-	                <a class="nav-link" href="#">School</a>
-	             </li>
-	          </ul>
-	       </div>
-	       <div class="applyButton"><a href="{{url('/register')}}">register with us <img src="{{ asset('/')}}assets/frontend/images/arrow_apply.png" alt="Apply Now"></a></div>
-	    </div>
-	 </div>
-	</nav>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <!-- <h1 class="logo"><a href="index.html">multi</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="{{ url('/') }}" class="logo"><img src="{{ asset('/')}}assets/onepage/img/path-logo.png" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <!-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> -->
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="{{ route('register.index' )}}">Register With Us</a></li>
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->

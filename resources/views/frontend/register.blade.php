@@ -1,391 +1,517 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en">  
 
 <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Pathports</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-  <meta charset="utf-8">
+  <!-- Favicons -->
+  <link href="{{ asset('/')}}assets/multi/img/favicon.png" rel="icon">
+  <link href="{{ asset('/')}}assets/multi/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-<!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('/')}}assets/multi/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="{{ asset('/')}}assets/multi/vendor/aos/aos.css" rel="stylesheet">
+  <link href="{{ asset('/')}}assets/multi/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ asset('/')}}assets/multi/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="{{ asset('/')}}assets/multi/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="{{ asset('/')}}assets/multi/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="{{ asset('/')}}assets/multi/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="{{ asset('/')}}assets/multi/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ asset('/')}}assets/frontend/css/style.css">
-  <link rel = "icon" type = "image/png" href = "{{ asset('/')}}assets/frontend/images/favicon.png">
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('/')}}assets/multi/css/style.css" rel="stylesheet">
 
 
-
-   <!--  <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/bootstrap.css"> -->
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/vendors/css/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/vendors/css/forms/wizard/bs-stepper.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/vendors/css/forms/select/select2.min.css">
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/admin/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/admin/vendors/css/forms/wizard/bs-stepper.min.css">
+  
+     
     
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/components.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/themes/dark-layout.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/themes/bordered-layout.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/admin/css/plugins/forms/form-wizard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/> 
+    
+   
+    <link rel="stylesheet" href="{{ asset('/')}}assets/frontend/css/style.css">
+    <link rel="stylesheet" href="{{ asset('/')}}assets/frontend/css/custom.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
-    <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/plugins/forms/form-validation.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/backend/css/plugins/forms/form-wizard.css">
+    <style>
+        .select2-container {
+            width: 100% !important;
+        }
+        .select2-container--default .select2-selection--single {
+            background-color: #fff;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            height: 42px;
+            padding: 4px 0 0 0;
+        }
 
-    <!-- END: Page CSS-->
+        .select2-container--default .select2-selection--single .select2-selection__placeholder{
+            color: #999;
+            font-size: 15px;
+            margin:  8px 0;
+        }
+        .select2-container--default .select2-results__option--highlighted[aria-selected]{
+            background-color: #ed502e;
+            color: white;
+        }
 
-    <!-- BEGIN: Custom CSS-->
-    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/admin/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/')}}assets/frontend/assets/css/custom.css"> -->
-
-    <link rel="stylesheet" href="{{ asset('/')}}assets/backend/css/style.css">
-      <link rel="stylesheet" href="{{ asset('/')}}assets/frontend/css/style.css">
-      <link rel="stylesheet" href="{{ asset('/')}}assets/frontend/css/custom.css">
-    <!-- END: Custom CSS-->
-
-
-
+    </style>
 </head>
-
 <body>
 
-
-
 @include('frontend.layouts.partials._header')
-<div class="container">
-    <!-- Modern Horizontal Wizard -->
-    <section class="modern-horizontal-wizard">
-        <div class="bs-stepper wizard-modern modern-wizard-example">
-            <div class="bs-stepper-header">
-                <div class="step" data-target="#account-details-modern" role="tab" id="account-details-modern-trigger">
-                    <button type="button" class="step-trigger">
-                        <span class="bs-stepper-box tab_box">
-                            <i data-feather="file-text" class="font-medium-3"></i>
-                        </span>
-                        <span class="bs-stepper-label">
-                            <span class="bs-stepper-title tab_text">University</span>
-                            <span class="bs-stepper-subtitle tab_subtitle_text">Add University Details</span>
-                        </span>
-                    </button>
-                </div>
-                <div class="line">
-                    <!-- <i data-feather="chevron-right" class="font-medium-2"></i>-->
-                </div>
-                <div class="step" data-target="#personal-info-modern" role="tab" id="personal-info-modern-trigger">
-                    <button type="button" class="step-trigger">
-                        <span class="bs-stepper-box tab_box">
-                            <i data-feather="user" class="font-medium-3"></i>
-                        </span>
-                        <span class="bs-stepper-label">
-                            <span class="bs-stepper-title tab_text">Graduates</span>
-                            <span class="bs-stepper-subtitle tab_subtitle_text">Add Graduates Info</span>
-                        </span>
-                    </button>
-                </div>
-                <div class="line">
-                   <!-- <i data-feather="chevron-right" class="font-medium-2"></i>-->
-                </div>
-                <div class="step" data-target="#address-step-modern" role="tab" id="address-step-modern-trigger">
-                    <button type="button" class="step-trigger">
-                        <span class="bs-stepper-box tab_box">
-                            <i data-feather="map-pin" class="font-medium-3"></i>
-                        </span>
-                        <span class="bs-stepper-label">
-                            <span class="bs-stepper-title tab_text">Alumini</span>
-                            <span class="bs-stepper-subtitle tab_subtitle_text">Add Alumini</span>
-                        </span>
-                    </button>
-                </div>
-                 <div class="line">
-                    <!-- <i data-feather="chevron-right" class="font-medium-2"></i> -->
-                </div>
-                <div class="step" data-target="#social-links-modern" role="tab" id="social-links-modern-trigger">
-                    <button type="button" class="step-trigger">
-                        <span class="bs-stepper-box tab_box">
-                            <i data-feather="link" class="font-medium-3"></i>
-                        </span>
-                        <span class="bs-stepper-label">
-                            <span class="bs-stepper-title tab_text">Booster</span>
-                            <span class="bs-stepper-subtitle tab_subtitle_text">Add Booster</span>
-                        </span>
-                    </button>
-                </div>
-            </div>
-            <div class="bs-stepper-content">
-                <div id="account-details-modern" class="content" role="tabpanel" aria-labelledby="account-details-modern-trigger">
-                   
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-firstname">Firstname</label>
-                            <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-lastname">Lastname</label>
-                            <input type="text" id="modern-lastname" class="form-control" placeholder="johndoe" />
-                        </div>
+
+<div class="main-custom-stepper">
+    <div class="container">
+        
+        <!-- Modern Horizontal Wizard -->
+       
+
+        <section class="modern-horizontal-wizard mt-3">
+            <div class="bs-stepper wizard-modern modern-wizard-example">
+
+                <div class="bs-stepper-header custom-stepper">
+
+                    <!-- <div class="step" data-target="#account-details-modern" role="tab" id="account-details-modern-trigger">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-box tab_box">
+                                <i data-feather="file-text" class="font-medium-3"></i>
+                            </span>
+                            <span class="bs-stepper-label">
+                                <span class="bs-stepper-title tab_text">University</span>
+                                <span class="bs-stepper-subtitle tab_subtitle_text">Add University Details</span>
+                            </span>
+                        </button>
+                    </div> -->
+                   <!--  <div class="line">
+                        
+                    </div> -->
+                    <div class="step" data-target="#personal-info-modern" role="tab" id="personal-info-modern-trigger">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-box tab_box">
+                                <i data-feather="user" class="font-medium-3"></i>
+                            </span>
+                            <span class="bs-stepper-label">
+                                <span class="bs-stepper-title tab_text">Students</span>
+                                <span class="bs-stepper-subtitle tab_subtitle_text">Add Students Info</span>
+                            </span>
+                        </button>
                     </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-username">Prefered Name</label>
-                            <input type="text" id="modern-username" class="form-control" placeholder="johndoe" />
-                        </div>
-                        
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-phone">Phone</label>
-                            <input type="text" id="modern-phone" class="form-control" aria-label="john.doe" />
-                        </div>
-                        
+                    <div class="line">
+                       <!-- <i data-feather="chevron-right" class="font-medium-2"></i>-->
                     </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">Email</label>
-                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">Alternate Email</label>
-                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
-                        </div>
-                        
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-password">Password</label>
-                            <input type="password" id="modern-password" class="form-control" />
-                        </div>
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-confirm-password">Confirm Password</label>
-                            <input type="password" id="modern-confirm-password" class="form-control"  />
-                        </div>
+                    <div class="step" data-target="#address-step-modern" role="tab" id="address-step-modern-trigger">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-box tab_box">
+                               <!--  <i data-feather="map-pin" class="font-medium-3"></i> -->
+                                     <i data-feather="user" class="font-medium-3"></i>
+                            </span>
+                            <span class="bs-stepper-label">
+                                <span class="bs-stepper-title tab_text">Alumni</span>
+                                <span class="bs-stepper-subtitle tab_subtitle_text">Add Alumni</span>
+                            </span>
+                        </button>
                     </div>
-                    <div class="row">
-                        
-                        <div class="mb-3 col-md-6">
-                            <label for="customFile1" class="form-label">Resume</label>
-                            <input class="form-control" type="file" id="formFile">
-                        </div>
-                        
+                     <div class="line">
+                        <!-- <i data-feather="chevron-right" class="font-medium-2"></i> -->
                     </div>
-                    <div class="d-flex justify-content-end mt-3">
-                        <a href="http://127.0.0.1:8000/backend/login"><button class="btn btn-success btn-submit submit_button">Submit</button></a>
+                    <div class="step" data-target="#social-links-modern" role="tab" id="social-links-modern-trigger">
+                        <button type="button" class="step-trigger">
+                            <span class="bs-stepper-box tab_box">
+                                <!-- <i data-feather="link" class="font-medium-3"></i> -->
+                                      <i data-feather="user" class="font-medium-3"></i>
+                            </span>
+                            <span class="bs-stepper-label">
+                                <span class="bs-stepper-title tab_text">Boosters</span>
+                                <span class="bs-stepper-subtitle tab_subtitle_text">Add Booster</span>
+                            </span>
+                        </button>
                     </div>
                 </div>
-                <div id="personal-info-modern" class="content" role="tabpanel" aria-labelledby="personal-info-modern-trigger">
-                   
-                    
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-firstname">Firstname</label>
-                            <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-lastname">Lastname</label>
-                            <input type="text" id="modern-lastname" class="form-control" placeholder="johndoe" />
-                        </div>
+                @if ($message = Session::get('success'))
+                    <div class="alert register-success">
+                        <p>{{ $message }}</p>   
                     </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-username">Prefered Name</label>
-                            <input type="text" id="modern-username" class="form-control" placeholder="johndoe" />
-                        </div>
-                        
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-phone">Phone</label>
-                            <input type="text" id="modern-phone" class="form-control" aria-label="john.doe" />
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">Email</label>
-                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">Alternate Email</label>
-                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
-                        </div>
-                        
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-password">Password</label>
-                            <input type="password" id="modern-password" class="form-control"  />
-                        </div>
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-confirm-password">Confirm Password</label>
-                            <input type="password" id="modern-confirm-password" class="form-control"  />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">School ID-no SS#</label>
-                            <input type="text" id="modern-sid" class="form-control" placeholder="" aria-label="john.doe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label for="customFile1" class="form-label">Resume</label>
-                            <input class="form-control" type="file" id="uni_image"  />
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="d-flex justify-content-end mt-3">
-                        
-                        <button class="btn btn-success btn-submit submit_button"><a href="http://127.0.0.1:8000/backend/login">Submit</a></button>
-                    </div>
-                </div>
-                <div id="address-step-modern" class="content" role="tabpanel" aria-labelledby="address-step-modern-trigger">
-                   
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-firstname">Firstname</label>
-                            <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-lastname">Lastname</label>
-                            <input type="text" id="modern-lastname" class="form-control" placeholder="johndoe" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-username">Prefered Name</label>
-                            <input type="text" id="modern-username" class="form-control" placeholder="johndoe" />
-                        </div>
-                        
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-phone">Phone</label>
-                            <input type="text" id="modern-phone" class="form-control" aria-label="john.doe" />
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">Email</label>
-                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">Alternate Email</label>
-                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
-                        </div>
-                        
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-password">Password</label>
-                            <input type="password" id="modern-password" class="form-control" />
-                        </div>
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-confirm-password">Confirm Password</label>
-                            <input type="password" id="modern-confirm-password" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">School ID-no SS#</label>
-                            <input type="text" id="modern-sid" class="form-control" placeholder="" aria-label="john.doe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label for="customFile1" class="form-label">Resume</label>
-                            <input class="form-control" type="file" id="uni_image"  />
-                        </div>
-                        
-                    </div>
-                     <div class="d-flex justify-content-end mt-3">
+                @endif 
+                <div class="bs-stepper-content02">
+                    <form method="POST" action="{{route('register.store')}}" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="tab_id" value="2">
+                        <div id="account-details-modern" class="content" role="tabpanel" aria-labelledby="account-details-modern-trigger">
                        
-                        <button class="btn btn-success btn-submit submit_button"><a href="http://127.0.0.1:8000/backend/login">Submit</a></button>
-                    </div>
-                    
-                </div>
-                <div id="social-links-modern" class="content" role="tabpanel" aria-labelledby="social-links-modern-trigger">
-                    
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-firstname">Firstname</label>
-                            <input type="text" id="modern-firstname" class="form-control" placeholder="johndoe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-lastname">Lastname</label>
-                            <input type="text" id="modern-lastname" class="form-control" placeholder="johndoe" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-username">Prefered Name</label>
-                            <input type="text" id="modern-username" class="form-control" placeholder="johndoe" />
-                        </div>
-                        
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-phone">Phone</label>
-                            <input type="text" id="modern-phone" class="form-control" aria-label="john.doe" />
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">Email</label>
-                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label" for="modern-email">Alternate Email</label>
-                            <input type="email" id="modern-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
-                        </div>
-                        
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-password">Password</label>
-                            <input type="password" id="modern-password" class="form-control"  />
-                        </div>
-                        <div class="mb-3 form-password-toggle col-md-6">
-                            <label class="form-label" for="modern-confirm-password">Confirm Password</label>
-                            <input type="password" id="modern-confirm-password" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-firstname">First Name</label>
+                                <input type="text"  name="firstname" placeholder="First Name" class="form-control @error('firstname') is-invalid @enderror" value="{{old('firstname')}}"  />
+                                @error('firstname')<div class="invalid-feedback"> {{ $message }} </div>@enderror
 
-                        <div class="mb-3 col-md-6">
-                            <label for="customFile1" class="form-label">Resume</label>
-                            <input class="form-control" type="file" id="uni_image"  />
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-lastname">Last Name</label>
+                                <input type="text"  name="lastname" class="form-control @error('lastname') is-invalid @enderror" value="{{old('lastname')}}" placeholder="Last Name"/>
+                                @error('lastname')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-username">Prefered Name</label>
+                                <input type="text"  name="username" class="form-control @error('username') is-invalid @enderror" value="{{old('username')}}" placeholder="Prefered Name"/>
+                                @error('username')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-phone">Phone</label>
+                                <input type="text"  name="contact" class="form-control phone-number-mask @error('contact') is-invalid @enderror" aria-label="john.doe" value="{{old('contact')}}" placeholder="Phone"/>
+                                @error('contact')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">Email</label>
+                                <input type="email"  name="email" class="form-control @error('email') is-invalid @enderror" value="{{old('email')}}" placeholder="Email"/>
+                                @error('email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">Alternate Email</label>
+                                <input type="email"  name="alternat_email" class="form-control @error('alternat_email') is-invalid @enderror" placeholder="john.doe@email.com" placeholder="Alternate Email" />
+                                @error('alternat_email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                            <div class="form-password-toggle col-md-6">
+                                <label class="form-label" for="modern-password">Password</label>
+                                <input type="password"  name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password"/>
+                                @error('password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            <div class="form-password-toggle col-md-6">
+                                <label class="form-label" for="modern-confirm-password">Confirm Password</label>
+                                <input type="password"   name="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror"  placeholder="Confirm Password"/>
+                                @error('confirm_password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            
+                            <div class="col-md-6 share-sole-detail">
+                                <label for="customFile1" class="form-label">Resume</label>
+                                <input class="form-control" type="file"  name="graudate_resume">
+                            </div>
+                            
+                        </div>
+                        <div class="d-flex justify-content-center mt-3">
+                            <!-- <a href="http://wellspringinfotech.com/pathports/login/"><button class="btn btn-success btn-submit submit_button">Submit</button></a> -->
+                            <button type="submit" class="btn btn-primary me-1 add-button register_button">Submit</button>
+                        </div>
+                        </div>
+                    </form>
+                    <form method="POST" action="{{route('register.store')}}" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="tab_id" value="3">
+                        <div id="personal-info-modern" class="content" role="tabpanel" aria-labelledby="personal-info-modern-trigger">
+                       
+                        
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-firstname">First Name</label>
+                                <input type="text"  name="firstname" class="form-control @error('firstname') is-invalid @enderror" value="{{old('firstname')}}" />
+                                @error('firstname')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-lastname">Last Name</label>
+                                <input type="text"  name="lastname" class="form-control @error('lastname') is-invalid @enderror" value="{{old('lastname')}}"/>
+                                @error('lastname')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-username">Prefered Name</label>
+                                <input type="text"  name="username" class="form-control @error('username') is-invalid @enderror" value="{{old('username')}}"/>
+                                @error('username')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-phone">Phone</label>
+                                <input type="text"  name="contact" class="form-control phone-number-mask @error('contact') is-invalid @enderror" aria-label="john.doe" value="{{old('contact')}}"/>
+                                @error('contact')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">Email</label>
+                                <input type="email"  name="email" class="form-control @error('email') is-invalid @enderror" value="{{old('email')}}" />
+                                @error('email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">Alternate Email</label>
+                                <input type="email"  name="alternat_email" class="form-control @error('alternat_email') is-invalid @enderror"   />
+                                @error('alternat_email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                            <div class="form-password-toggle col-md-6">
+                                <label class="form-label" for="modern-password">Password</label>
+                                <input type="password"  name="password" class="form-control @error('password') is-invalid @enderror" />
+                                @error('password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            <div class="form-password-toggle col-md-6">
+                                <label class="form-label" for="modern-confirm-password">Confirm Password</label>
+                                <input type="password"   name="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror"  />
+                                @error('confirm_password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+
+                                <label class="form-label">University</label>
+
+                                <select class="form-select user-register select2 @error('university_id') is-invalid @enderror"  name="university_id">
+                                    <option value="">Please Select University</option>
+                                    @foreach($univeristy as $universities)
+
+                                        <option {{ old('university_id') == $universities->id ? 'selected' : '' }} value="{{$universities->id}}">{{$universities->uni_name}}</option>
+                                    @endforeach;
+                                </select>
+
+                                @error('university_id')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">School ID-no SS#</label>
+                                <input type="text"  class="form-control" placeholder="" aria-label="john.doe" />
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label for="customFile1" class="form-label">Resume</label>
+                                <input class="form-control" type="file"  name="graudate_resume" />
+                            </div>
+                            
                         </div>
                         
-                    </div>
-                    
-                    <div class="d-flex justify-content-end mt-3">
+                        <div class="d-flex justify-content-center mt-3">
+                            
+                            <!-- <button class="btn btn-success btn-submit submit_button"><a href="http://wellspringinfotech.com/pathports/login/">Submit</a></button> -->
+                            <button type="submit" class="btn btn-primary me-1 add-button register_button">Submit</button>
+                        </div>
+                        </div>
+                    </form>
+                    <form method="POST" action="{{route('register.store')}}" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="tab_id" value="4">
+                        <div id="address-step-modern" class="content" role="tabpanel" aria-labelledby="address-step-modern-trigger">
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-firstname">First Name</label>
+                                <input type="text"  name="firstname" class="form-control @error('firstname') is-invalid @enderror" value="{{old('firstname')}}" />
+                                @error('firstname')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-lastname">Last Name</label>
+                                <input type="text" name="lastname" class="form-control @error('lastname') is-invalid @enderror" value="{{old('lastname')}}"/>
+                                @error('lastname')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-username">Prefered Name</label>
+                                <input type="text"  name="username" class="form-control @error('username') is-invalid @enderror" value="{{old('username')}}"/>
+                                @error('username')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-phone">Phone</label>
+                                <input type="text"  name="contact" class="form-control phone-number-mask @error('contact') is-invalid @enderror" aria-label="john.doe" value="{{old('contact')}}"/>
+                                @error('contact')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">Email</label>
+                                <input type="email"  name="email" class="form-control @error('email') is-invalid @enderror" value="{{old('email')}}" />
+                                @error('email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">Alternate Email</label>
+                                <input type="email"  name="alternat_email" class="form-control @error('alternat_email') is-invalid @enderror"   />
+                                @error('alternat_email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                            <div class="form-password-toggle col-md-6">
+                                <label class="form-label" for="modern-password">Password</label>
+                                <input type="password"  name="password" class="form-control @error('password') is-invalid @enderror" />
+                                @error('password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            <div class="form-password-toggle col-md-6">
+                                <label class="form-label" for="modern-confirm-password">Confirm Password</label>
+                                <input type="password"   name="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror"  />
+                                @error('confirm_password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+
+                                <label class="form-label">University</label>
+
+                                <select class="form-select user-register select2 @error('university_id') is-invalid @enderror"  name="university_id">
+                                    <option value="">Please Select University</option>
+                                    @foreach($univeristy as $universities)
+
+                                        <option {{ old('university_id') == $universities->id ? 'selected' : '' }} value="{{$universities->id}}">{{$universities->uni_name}}</option>
+                                    @endforeach;
+                                </select>
+
+                                @error('university_id')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">School ID-no SS#</label>
+                                <input type="text"  class="form-control" placeholder="" aria-label="john.doe" />
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label for="customFile1" class="form-label">Resume</label>
+                                <input class="form-control" type="file"   name="graudate_resume"/>
+                            </div>
+                            
+                        </div>
+                         <div class="d-flex justify-content-center mt-3">
+                           
+                            <!-- <button class="btn btn-success btn-submit submit_button"><a href="http://wellspringinfotech.com/pathports/login/">Submit</a></button> -->
+                            <button type="submit" class="btn btn-primary me-1 add-button register_button">Submit</button>
+                        </div>
                         
-                        <button class="btn btn-success btn-submit submit_button"><a href="http://127.0.0.1:8000/backend/login">Submit</a></button>
-                    </div>
+                        </div>
+                    </form>
+                    <form method="POST" action="{{route('register.store')}}" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="tab_id" value="5">
+                        <div id="social-links-modern" class="content" role="tabpanel" aria-labelledby="social-links-modern-trigger">
+                        
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-firstname">First Name</label>
+                                <input type="text"  name="firstname" class="form-control @error('firstname') is-invalid @enderror" value="{{old('firstname')}}" />
+                                @error('firstname')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-lastname">Last Name</label>
+                                <input type="text"  name="lastname" class="form-control @error('lastname') is-invalid @enderror" value="{{old('lastname')}}"/>
+                                @error('lastname')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-username">Prefered Name</label>
+                                <input type="text"  name="username" class="form-control @error('username') is-invalid @enderror" value="{{old('username')}}"/>
+                                @error('username')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-phone">Phone</label>
+                                <input type="text"  name="contact" class="form-control phone-number-mask @error('contact') is-invalid @enderror" aria-label="john.doe" value="{{old('contact')}}"/>
+                                @error('contact')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">Email</label>
+                                <input type="email"  name="email" class="form-control @error('email') is-invalid @enderror" value="{{old('email')}}" />
+                                @error('email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label class="form-label" for="modern-email">Alternate Email</label>
+                                <input type="email"  name="alternat_email" class="form-control @error('alternat_email') is-invalid @enderror"   />
+                                @error('alternat_email')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            
+                            <div class="form-password-toggle col-md-6">
+                                <label class="form-label" for="modern-password">Password</label>
+                                <input type="password"  name="password" class="form-control @error('password') is-invalid @enderror" />
+                                @error('password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                            </div>
+                            <div class="form-password-toggle col-md-6">
+                                <label class="form-label" for="modern-confirm-password">Confirm Password</label>
+                                <input type="password"   name="confirm_password" class="form-control @error('confirm_password') is-invalid @enderror"  />
+                                @error('confirm_password')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 share-sole-detail">
+
+                                <label class="form-label">University</label>
+
+                                <select class="form-select user-register select2  @error('university_id') is-invalid @enderror"  name="university_id">
+                                    <option value="">Please Select University</option>
+                                    @foreach($univeristy as $universities)
+
+                                        <option {{ old('university_id') == $universities->id ? 'selected' : '' }} value="{{$universities->id}}">{{$universities->uni_name}}</option>
+                                    @endforeach;
+                                </select>
+
+                                @error('university_id')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+
+                            </div>
+                            <div class="col-md-6 share-sole-detail">
+                                <label for="customFile1" class="form-label">Resume</label>
+                                <input class="form-control" type="file"   name="graudate_resume"/>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="d-flex justify-content-center mt-3">
+                            
+                            <!-- <button class="btn btn-success btn-submit submit_button"><a href="http://wellspringinfotech.com/pathports/login/">Submit</a></button> -->
+                            <button type="submit" class="btn btn-primary me-1 add-button register_button">Submit</button>
+                        </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- /Modern Horizontal Wizard -->
+        </section>
+        <!-- /Modern Horizontal Wizard -->
+    </div>
 </div>
+
 @include('frontend.layouts.partials._footer')
-
-
 </body>
-
 </html>
 
+<div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+    <script src="{{ asset('/')}}assets/multi/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="{{ asset('/')}}assets/multi/vendor/aos/aos.js"></script>
+    <script src="{{ asset('/')}}assets/multi/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('/')}}assets/multi/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="{{ asset('/')}}assets/multi/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="{{ asset('/')}}assets/multi/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ asset('/')}}assets/multi/vendor/php-email-form/validate.js"></script>
 
-<!-- BEGIN: Vendor JS-->
-    <script src="{{ asset('/')}}assets/backend/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script src="{{ asset('/')}}assets/backend/vendors/js/forms/wizard/bs-stepper.min.js"></script>
-    <script src="{{ asset('/')}}assets/backend/vendors/js/forms/select/select2.full.min.js"></script>
-    <script src="{{ asset('/')}}assets/backend/vendors/js/forms/validation/jquery.validate.min.js"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="{{ asset('/')}}assets/backend/js/core/app-menu.js"></script>
-    <script src="{{ asset('/')}}assets/backend/js/core/app.js"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="{{ asset('/')}}assets/backend/js/scripts/forms/form-wizard.js"></script>
-    <!-- END: Page JS-->
+    <script src="{{ asset('/')}}assets/multi/js/main.js"></script>
+    <script src="{{ asset('/')}}assets/admin/vendors/js/vendors.min.js"></script>
+    <script src="{{ asset('/')}}assets/admin/vendors/js/forms/wizard/bs-stepper.min.js"></script>
+    <script src="{{ asset('/')}}assets/admin/js/core/app-menu.js"></script>
+    <script src="{{ asset('/')}}assets/admin/js/core/app.js"></script>
+    <script src="{{ asset('/')}}assets/admin/js/scripts/forms/form-wizard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
 
     <script>
         $(window).on('load', function() {
@@ -396,4 +522,6 @@
                 });
             }
         })
+        $('.select2').select2();
+        $('.phone-number-mask').inputmask('999.999.9999');
     </script>

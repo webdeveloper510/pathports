@@ -29,11 +29,11 @@ div.text-navbar {
 
 }
 
-.logo-img {
+/*.logo-img {
 
     width: 43%;
 
-}
+}*/
 
 .logo-img a {
     padding: 0px 0px 0px 20px;
@@ -227,7 +227,7 @@ nav.darkback ul li.active:after {
 
     text-decoration: none;
 
-    font-size: 15px;
+    font-size: 14px;
 
     text-transform: uppercase;
 
@@ -307,7 +307,7 @@ nav.darkback ul li.active:after {
 
     border-radius: 0 0 0 10px;
 
-    'Avenir LT W01 45 Book', 'Helvetica Neue', Helvetica, Arial, font-family: sans-serif;
+    font-family: 'Avenir LT W01 45 Book', 'Helvetica Neue', Helvetica, Arial,sans-serif;
 
 }
 
@@ -430,20 +430,6 @@ li::marker {
     color: #ededed;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .dropbtn {
 
@@ -792,7 +778,7 @@ p.Mission-we {
 
 .videoBannerInner {
 
-    padding: 10% 0;
+    padding: 14% 0;
 
     background: rgba(0,0,0,.3);
 
@@ -831,7 +817,7 @@ p.Mission-we {
 
     height: 180px;
 
-}
+}https://instagram.fdel1-2.fna.fbcdn.net/v/t51.2885-15/300378786_155181067169140_5795601645848569730_n.jpg?stp=dst-jpg_e15_p240x240&_nc_ht=instagram.fdel1-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=dfK-g10zhJgAX_66fDp&edm=AEw_LKABAAAA&ccb=7-5&ig_cache_key=MjkxMDYyMDE1NzcyMDYwMzg1NA%3D%3D.2-ccb7-5&oh=00_AT9m_dMTo9AD1xB0Z9Cnthdip2akzI0o9q-MbCj0j-bsUQ&oe=6306EE02&_nc_sid=c7f314
 .show-btn button.button-show {
     width: 200px;
     font-size: 18px;
@@ -949,7 +935,12 @@ p.Mission-we {
 .blockContents.pad-top-l {
 
     padding-top: 100px;
+    display: none !important;
 
+}
+
+.blockContents-section {
+    margin-top: 0 !important;
 }
 
 /* Undergraduate-image section css end */
@@ -2055,6 +2046,8 @@ h4.ContentArea {
 
 
 
+
+
 .introIconImage {
 
     width: 35vw;
@@ -2090,15 +2083,6 @@ h4.ContentArea {
 }
 
 
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -2108,28 +2092,28 @@ h4.ContentArea {
 /* register page css start */
 
 .step.active .tab_box {
-    background: #0389f9 !important;
+    background: #38c9ff !important;
 	color: #ffffff !important;
-    box-shadow: 0 3px 6px 0 rgb(149 205 255) !important;
+    box-shadow: 0 3px 6px 0 #38c9ffad !important;
 }
 .tab_box {
-    color: #0389f9 !important;
+    color: #38c9ff !important;
 }
 
 .bs-stepper .bs-stepper-header .step.crossed .step-trigger .tab_box {
-    color: #0389f9 !important;
+    color: #ed502e !important;
 }
 
 
 .step.active .tab_text {
-    color: #0389f9 !important;
+    color: #38c9ff !important;
 }
 .tab_text {
 color: #333333 !important;
 }
 .tab_subtitle_text {
-    color: #646464 !important;
-	color: #333333 !important;
+    color: #071527 !important;
+	color: #071527 !important;
 }
 
 button.submit_button {
@@ -2154,9 +2138,154 @@ button.submit_button.focus, button.submit_button:focus {
 
 
 
+/* register page css end*/
+
+.form-label {
+	color: #000 !important;
+	font-size: 1rem;
+}
+
 .submit_button a {
     color: #fff;
     text-decoration: none;
 }
 
-/* register page css end*/
+.main-menu.menu-light .navigation li a > * {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.register_button{
+    background-color: #38c9ff !important;
+    border-color: #38c9ff !important;
+}
+.custom-stepper{    
+    clear: both;
+    padding-top: 46px !important;
+    padding-bottom: 20px !important;
+    margin-top: 29px !important;
+}
+.col-md-6.share-sole-detail {
+    margin-bottom: 8px;
+}
+.share-sole-detail label.form-label {
+    padding-left: 5px;
+    font-size: 15px;
+}
+.form-password-toggle.col-md-6 label.form-label {
+    padding-left: 5px;
+}
+.bs-stepper-content form {
+    margin: 0px;
+}
+button.btn.btn-primary.me-1.add-button.register_button {
+    padding: 5px 21px;
+    font-size: 15px;
+}
+section.modern-horizontal-wizard.mt-3 {
+    clear: both !important;
+}
+header#header {
+    clear: both;
+}
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #ced4da !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.bs-stepper .bs-stepper-header .step.crossed .step-trigger .bs-stepper-box {
+    background-color: #38c9ffb0 !important;
+    color: #fff !important;
+}
+
+.share-sole-detail input.form-control {
+    font-size: 13;
+    padding-left: 8px;
+    max-width: px;
+}
+.form-password-toggle.col-md-6 {
+    margin-bottom: 8px;
+}
+.form-password-toggle label.form-label {
+    font-size: 14px;
+}
+.form-password-toggle input.form-control {
+    max-width: 365px;
+    padding-left: 8px;
+}
+.bs-stepper.wizard-modern .bs-stepper-content {
+    background-color: #fff;
+    max-width: 804px;
+    box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+    margin: auto;
+}
+.bs-stepper.wizard-modern .bs-stepper-header {
+    border: none;
+    background: #fff !important;
+    max-width: 804px;
+    padding-top: 20px !important;
+    margin: auto;
+    box-shadow:0px 0px 20px 0px rgb(11 35 65 / 10%);
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    margin-top: 56px !important;
+    padding-right: 11px;
+    padding-left: 11px;
+    justify-content: space-between;
+}
+
+.alert.register-success {
+    color: #0f5132 !important;
+    border-color: #badbcc;
+    background: #0f51322e;
+    padding: 0px 19px;
+    width: 70%;
+}
+.alert.register-success {
+    color: #0f5132 !important;
+    border-color: #badbcc;
+    background: #0f51322e;
+    padding: 5px 19px;
+    max-width: 804px;
+    margin: auto;
+}
+.alert.register-success p {
+    margin: 0;
+    font-size: 14px;
+}
+.about-us-section p {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #5a5a5a;
+    line-height: 24px;
+}
+.bs-stepper-content02 {
+    background-color: #fff;
+    max-width: 804px;
+    box-shadow:0px 0px 20px 0px rgb(11 35 65 / 10%);
+    margin: auto;
+    padding: 1.5rem 1.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.main-custom-stepper {
+    background: #f6f9fd;
+}
+section.modern-horizontal-wizard.mt-3 {
+    margin-bottom: 0px;
+}
+.user-register {
+    font-size: 14px !important;
+}
+.share-sole-detail input.form-control {
+    padding: 8px 0;
+    padding-left: 8px;
+}
+.btn-check:focus+.btn, .btn:focus {
+    box-shadow: unset !important;
+}
+.form-select:focus {
+    box-shadow: unset !important;
+    
+}
