@@ -21,12 +21,14 @@ class AuthController extends Controller
         $university_data =  University::where('id', $u_id)->get();
         $request->session()->put('university_data',$university_data);
 
-        if(Auth::check()){
+        return view('admin.auth.login',compact('id','university_data','u_id'));
+
+        /*if(Auth::check()){
             return redirect()->intended(route('dashboard'));
         }
         else{
             return view('admin.auth.login',compact('id','university_data','u_id'));
-        }
+        }*/
      
         
     }

@@ -36,7 +36,13 @@ class PermissionController extends Controller
         $roles = Role::where('id', '!=', 1)->get();
         $permission = Permissions::all();
        
-        return view('admin.permissions',compact('roles','permission','permission_array'));
+        if($role_id==1){
+            return view('admin.permissions',compact('roles','permission','permission_array'));
+         }
+         else{
+            return view('admin.restrict',compact('permission_array'));
+         }
+        
     }
 
     /**

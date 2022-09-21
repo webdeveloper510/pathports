@@ -12,6 +12,9 @@
  $name = $firstName." ".$lastName;
 
 
+// echo "<pre>";print_r($meetingCount);
+ //echo "<pre>";print_r($meeting_date);die;
+
 ?>
     <style>
     
@@ -83,81 +86,7 @@
                <div
                id="myChart" style="width:100%; max-width:650px; height:310px;">
                   </div>
-                  <!-- <div class="row">
-                    <div class="col-md-12" style="display: flex;
-                       font-size: 12px;justify-content: space-around;">
-                       <div class="Placchart">
-                             <div class="d-flex justify-content-between  mb-1 last">
-                                <div class="d-flex align-items-center" style="padding-left: 15x;">
-                                    <i data-feather="monitor" class="font-medium-2 text-primary"></i>
-                                    <span class="fw-bold ms-75 me-25">WSU Spokane</span>
-                                  
-                                </div>
-                                <div style="padding-right: 11px;padding-left: 12px;">
-                                    <span>2%</span>
-                                    <i data-feather="arrow-up" class="text-success"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between mb-1">
-                                <div class="d-flex align-items-center" style="padding-left: 15x;">
-                                    <i data-feather="tablet" class="font-medium-2 text-warning"></i>
-                                    <span class="fw-bold ms-75 me-25">WSU Vancouver</span>
-                                  
-                                </div>
-                                <div style="padding-right: 11px;padding-left: 12px;">
-                                    <span>8%</span>
-                                    <i data-feather="arrow-up" class="text-success"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between mb-1">
-                                <div class="d-flex align-items-center" style="padding-left: 15x;">
-                                    <i data-feather="tablet" class="font-medium-2 text-success"></i>
-                                    <span class="fw-bold ms-75 me-25">WSU Tri-Cities</span>
-                                   
-                                </div>
-                                <div style="padding-right: 11px;padding-left: 12px;">
-                                    <span>-5%</span>
-                                    <i data-feather="arrow-down" class="text-danger"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="Placchart">
-                            <div class="d-flex justify-content-between  mb-1">
-                                <div class="d-flex align-items-center" style="padding-left: 18px;">
-                                    <i data-feather="tablet" class="font-medium-2 text-warning"></i>
-                                    <span class="fw-bold ms-75 me-25">WSU Everett</span>
-                                  
-                                </div>
-                                <div style="padding-right: 11px;padding-left: 12px;">
-                                    <span>8%</span>
-                                    <i data-feather="arrow-up" class="text-success"></i>
-                                </div>
-                            </div>
-                              <div class="d-flex justify-content-between  mb-1">
-                                <div class="d-flex align-items-center" style="padding-left: 18px;">
-                                    <i data-feather="tablet" class="font-medium-2 text-warning"></i>
-                                    <span class="fw-bold ms-75 me-25">Washington State University</span>
-                                 
-                                </div>
-                                <div style="padding-right: 11px;padding-left: 12px;">
-                                    <span>6%</span>
-                                    <i data-feather="arrow-up" class="text-success"></i>
-                                </div>
-                            </div>
-                             <div class="d-flex justify-content-between  mb-1">
-                                <div class="d-flex align-items-center" style="padding-left: 15px;">
-                                    <i data-feather="monitor" class="font-medium-2 text-primary"></i>
-                                    <span class="fw-bold ms-75 me-25">WSU World Wide</span>
-                                   
-                                </div>
-                                <div style="padding-right: 11px; padding-left: 12px;">  
-                                    <span>2%</span>
-                                    <i data-feather="arrow-up" class="text-success"></i>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div> -->
+                
 
             </div>
         </div>
@@ -175,83 +104,7 @@
                                 <canvas id="doughnut-chart" style="width:100%;max-width:400px;height:300px"></canvas>
                               
                             </div>
-                            <!-- <div class="row"style="padding-top: 8px;">
-                                <div class="col-md-12" style="display: flex; justify-content: space-around;
-                                   font-size: 12px;">
-                                     <div class="Placchart">
-
-
-                                <div class="d-flex justify-content-between mt-5 mb-1 pt-5">
-                                    <div class="d-flex align-items-center">
-                                        <i data-feather="monitor" class="font-medium-2 text-primary"></i>
-                                        <span class="fw-bold ms-75 me-25">WSU Spokane</span>
-                                      
-                                    </div>
-                                    <div style="padding-right: 11px;padding-left: 12px;">
-                                        <span>2%</span>
-                                        <i data-feather="arrow-up" class="text-success"></i>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between mb-1">
-                                    <div class="d-flex align-items-center">
-                                        <i data-feather="tablet" class="font-medium-2 text-warning"></i>
-                                        <span class="fw-bold ms-75 me-25">WSU Vancouver</span>
-                                      
-                                    </div>
-                                     <div style="padding-right: 11px;padding-left: 12px;">
-                                        <span>8%</span>
-                                        <i data-feather="arrow-up" class="text-success"></i>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center">
-                                        <i data-feather="tablet" class="font-medium-2 text-success"></i>
-                                        <span class="fw-bold ms-75 me-25">WSU Tri-Cities</span>
-                                       
-                                    </div>
-                                     <div style="padding-right: 11px;padding-left: 12px;">
-                                        <span>-5%</span>
-                                        <i data-feather="arrow-down" class="text-danger"></i>
-                                    </div>
-                                </div>
-                            </div>
-                              <div class="Placchart">
-                                <div class="d-flex justify-content-between mt-5 mb-1 pt-5">
-                                    <div class="d-flex align-items-center"style="padding-left: 18px;">
-                                        <i data-feather="tablet" class="font-medium-2 text-warning"></i>
-                                        <span class="fw-bold ms-75 me-25">WSU Everett</span>
-                                      
-                                    </div>
-                                     <div style="padding-right: 11px;padding-left: 12px;">
-                                        <span>8%</span>
-                                        <i data-feather="arrow-up" class="text-success"></i>
-                                    </div>
-                                </div>
-                                  <div class="d-flex justify-content-between mt-1 mb-1">
-                                    <div class="d-flex align-items-center"style="padding-left: 18px;">
-                                        <i data-feather="tablet" class="font-medium-2 text-warning"></i>
-                                        <span class="fw-bold ms-75 me-25">Washington State University</span>
-                                     
-                                    </div>
-                                     <div style="padding-right: 11px;padding-left: 12px;">
-                                        <span>6%</span>
-                                        <i data-feather="arrow-up" class="text-success"></i>
-                                    </div>
-                                </div>
-                                 <div class="d-flex justify-content-between mt-1 mb-1">
-                                    <div class="d-flex align-items-center"style="padding-left: 18px;">
-                                        <i data-feather="monitor" class="font-medium-2 text-primary"></i>
-                                        <span class="fw-bold ms-75 me-25">WSU World Wide</span>
-                                       
-                                    </div>
-                                    <div style="padding-right: 11px;padding-left: 12px;">
-                                        <span>2%</span>
-                                        <i data-feather="arrow-up" class="text-success"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                           
                 </div>
             </div>
         </div>
@@ -280,10 +133,10 @@
                        </div>
                         <div class="Day">
                            <div class="card">
-                <h4 class="card-title" style="margin-top: 19px; margin-left: 24px;">Agenda</h4>
+                <h4 class="card-title" style="margin-top: 19px; margin-left: 24px;">Agendas</h4>
                 <canvas id="agendachart"></canvas>
                 </div>
-            </div>   
+            </div>  
                         </div>
                         <div class="col-md-6">
                         <div class="card">
@@ -311,7 +164,7 @@
                             </figure>
                        </div>
                        <div class="daybay">
-                       <div class="col-md-6">
+                       
                             <div class="card">
                                 <div class="chartCard monthlyChart">
                                         <div class="chartBox daysbox">
@@ -323,16 +176,67 @@
                                         </div>
                                  </div>
                             </div>   
-                        </div> 
+                         
                         </div>
+                        <div class="Day">
+                           <div class="card">
+                <h4 class="card-title" style="margin-top: 19px; margin-left: 24px;">Marketing Engagement</h4>
+                <canvas id="bar-chart" width="800" height="450"></canvas>
+                </div>
+            </div>
                    </div>
 
                     
                    
         <!-- Donut Chart Starts -->
         
+      
+
         <!-- <canvas id="myChart7" style="width:100%;max-width:600px"></canvas> -->
-        
+  <div class="row">
+    <div class="col-md-6">
+        <h2>Top 5 Interest Areas</h2>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Interest Areas</th>
+                <th>Count</th>
+                
+              </tr>
+            </thead>
+                <tbody>
+                    @foreach($top5 as $top5_data)
+                      <tr>
+                        <td>{{ $top5_data['interest_area_name'] }}</td>
+                        <td>{{ $top5_data['count'] }}</td>
+                       
+                      </tr>
+                     @endforeach
+                </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h2>Bottom 5 Interest Areas</h2>
+         <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Interest Areas</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+        @foreach($low5 as $low5_data)
+            <tr>
+            <td>{{ $low5_data['interest_area_name'] }}</td>
+            <td>{{ $low5_data['count'] }}</td>
+            
+            </tr>
+        @endforeach
+      
+    </tbody>
+  </table>
+    </div>
+  </div>      
     </div>
 
     
@@ -377,18 +281,24 @@
 
 <section id="chartjs-chart" >
     <div class="container" >
-    <div class="row content-chartjs-chart">
+    <div class="Day">
+                           <div class="card col-md-6">
+                <h4 class="card-title" style="margin-top: 19px; margin-left: 24px;">Agendas</h4>
+                <canvas id="agendachart"></canvas>
+                </div>
+            </div> 
+    <!-- <div class="row content-chartjs-chart"> -->
         
 
        <!-- Polar Area Chart Starts -->
       
-        <div class="col-md-12" style="height:330px">
+        <!-- <div class="col-md-12" style="height:330px">
             
-        </div>
-       
-    </div>
+        </div> -->
+    <!--        
+        </div> -->
     <div class="chartCard monthlyChart">
-      <div class="chartBox daysbox">
+      <div class="chartBox daysbox" style="width: 863px;max-height: 519px;">
       <!-- <h4 class="card-title" style="margin-top: 19px; margin-left: 24px;">Meetings</h4> -->
          <button  onclick="timeFrame(this)" value="day">Day</button>
         <button onclick="timeFrame(this)" value="week">Week</button>
@@ -401,33 +311,57 @@
 </div>
 </div>
 @endif
-        <script>
-  
-            var xValues = <?php echo json_encode($uni_name_array)?>;
-           
-            var yValues = <?php echo json_encode($values_array)?>;
-            var barColors = [ "pink","orange","#00dac7","purple"];
+<script>
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["6th", "7th", "8th", "9th", "10th", "11th", "12th"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [.000001,1,1,1,2,5,70]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+       // text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+</script>
 
-            new Chart("myChart7", {
-            type: "bar",
-            data: {
-                    labels: xValues,
-                    datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                    legend: {display: false},
-                    title: {
-                    display: true,
-                    text: "Meeting With Students"
-                    }
+
+<script>
+
+    var xValues = <?php echo json_encode($uni_name_array)?>;
+    
+    var yValues = <?php echo json_encode($values_array)?>;
+    var barColors = [ "pink","orange","#00dac7","purple"];
+
+    new Chart("myChart7", {
+    type: "bar",
+    data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+        }]
+    },
+    options: {
+            legend: {display: false},
+            title: {
+            display: true,
+            text: "Meeting With Students"
             }
-            });
+    }
+    });
 
 
-        </script>
+</script>
         <script>
             var xValues = ["WSU Spokane", "WSU Vancouver", "WSU Tri-Cities", "WSU Everett", "Washington State University","WSU World Wide"];
             var yValues = [55, 49, 44, 24, 15,30];
@@ -699,39 +633,29 @@
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
 <script>
-      var yVal = <?php echo json_encode($meeting_count)?>;
-      var xVal = <?php echo json_encode($meeting_date)?>;
-      console.log(xVal)
-        const day =[
-
-          {x:Date.parse('2021-11-01 '),y:12},
-          {x:Date.parse('2021-11-02 '),y:12},
-          {x:Date.parse('2021-11-03 '),y:6},
-          {x:Date.parse('2021-11-04 '),y:9},
-          {x:Date.parse('2021-11-05 '),y:3},
-        ];
+     
     
-        const week =[
-          {x:Date.parse('2021-10-31 '),y:50},
-          {x:Date.parse('2021-11-07 '),y:70},
-          {x:Date.parse('2021-11-14 '),y:100},
-          {x:Date.parse('2021-11-21 '),y:60},
-          {x:Date.parse('2021-11-28 '),y:30}
+      var xVal = <?php echo $meeting_chart_value;?>;
+         console.log("x",xVal);
+          const day = xVal;
+        
+    
+        const week = xVal;
+        //[
+          //{x:Date.parse('2021-10-31 '),y:50},
+          //{x:Date.parse('2021-11-07 '),y:70},
+          //{x:Date.parse('2021-11-14 '),y:100},
+          //{x:Date.parse('2021-11-21 '),y:60},
+          //{x:Date.parse('2021-11-28 '),y:30}
          
-        ];
-        const month =[
-          {x:Date.parse('2021-08-01 '),y:500},
-          {x:Date.parse('2021-09-01 '),y:700},
-          {x:Date.parse('2021-10-01 '),y:500},
-          {x:Date.parse('2021-11-01 '),y:600},
-          {x:Date.parse('2021-12-01 '),y:300}
-         
-        ];
+        //];
+        const month = xVal;
+        
     // setup 
     const data = {
       //labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       datasets: [{
-        label: 'Weekly Sales',
+        label: 'Meetings',
         data: day,
         backgroundColor: [
           'rgba(255, 26, 104, 0.2)',
@@ -812,10 +736,10 @@
 // var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
 // var yValues = [55, 49, 44, 24, 15];
 var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
+  "#87cefa",
+  "#95DBE5FF",
+  "#0095b6",
+  "#84D0FF",
   "#1e7145"
 ];
 

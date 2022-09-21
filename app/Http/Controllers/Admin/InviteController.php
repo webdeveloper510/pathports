@@ -45,7 +45,13 @@ class InviteController extends Controller
         }
         //$request->session()->put('permissions', $permission_array);
         Session::push('permissions', $permission_array);
-        return view('admin.invite.send_invite',compact('roles','permission_array','survey_list'));
+        if($role_id==1){
+            return view('admin.invite.send_invite',compact('roles','permission_array','survey_list'));
+        }
+        else{
+            return view('admin.restrict',compact('permission_array'));
+        }
+        
     }
 
    public function create(Request $request){
@@ -261,7 +267,13 @@ class InviteController extends Controller
         //$request->session()->put('permissions', $permission_array);
         Session::push('permissions', $permission_array);
 
-        return view('admin.survey.survey_manage',compact('permission_array'));
+        if($role_id==1){
+            return view('admin.survey.survey_manage',compact('permission_array'));
+        }
+        else{
+            return view('admin.restrict',compact('permission_array'));
+        }
+        
     }
 
     public function get_survey_data(Request $request){

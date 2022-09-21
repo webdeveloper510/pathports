@@ -4,7 +4,7 @@
 
       <!-- <h1 class="logo"><a href="index.html">multi</a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
-       <a href="{{ url('/') }}" class="logo"><img src="{{ asset('/')}}assets/onepage/img/path-logo.png" alt="" class="img-fluid"></a>
+       <a href="{{ url('/') }}" class="logo"><img src="http://wellspringinfotech.com/pathports/assets/onepage/img/path-logo.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>

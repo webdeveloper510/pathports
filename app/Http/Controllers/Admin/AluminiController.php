@@ -343,4 +343,9 @@ class AluminiController extends Controller
                          ->with('success','Availability Added Successfully.');
          
     }
+
+    public function bulk_upload(Request $request){
+        
+        dd($request->all());die;
+    }
 }

@@ -52,7 +52,13 @@ class MentorController extends Controller
        
         $offcampus_mentor_data = Mentor::where('role_id',4)->where('type',0)->where('user_id',$user_id)->get();
 
-        return view('admin.mentors.add_mentors',compact('permission_array','alumni_data','mentor_data','offcampus_mentor_data'));
+        if($role_id==3){
+            return view('admin.mentors.add_mentors',compact('permission_array','alumni_data','mentor_data','offcampus_mentor_data'));
+         }
+         else{
+            return view('admin.restrict',compact('permission_array'));
+         }
+        
     }
 
     /**

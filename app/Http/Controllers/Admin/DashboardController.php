@@ -13,6 +13,7 @@ use App\Models\Assign_permission;
 use App\Models\Permissions;
 use App\Models\Meeting;
 use App\Models\UserInterestAreas;
+use App\Models\InterestAreas;
 use RealRashid\SweetAlert\Facades\Alert;
 use Redirect;
 use Session;
@@ -142,7 +143,8 @@ class DashboardController extends Controller
             }
 
           // Agenda Chart  start
-
+            
+        if($role_id == 1){
                 $agenda_datas     = Meeting::join('agenda','agenda.id','=','meetings.agenda_id','left')
                                         ->groupBy('meetings.agenda_id')
                                         ->get();
@@ -161,42 +163,114 @@ class DashboardController extends Controller
                 $agenda_count = $agenda_count->count();
 
                 array_push($agenda_value,$agenda_count);
-            }                            
-         
-         
-          // Agenda Chart end
-            $meeting_data   = Meeting::join('users','users.id','=','meetings.from_user_id','left')
-                                       
-                                        ->select('meetings.*')
+            }   
+        } 
+        if($role_id == 3){
+
+            $agenda_datas     = Meeting::join('agenda','agenda.id','=','meetings.agenda_id','left')
+                                        ->select('meetings.from_user_id','meetings.agenda_id','meetings.id','agenda.name')
                                         ->where('meetings.from_user_id',auth::user()->id)
+                                        ->groupBy('meetings.agenda_id')
+                                        ->get();
+
+                    $agenda_name_array  = array(); 
+                    $agenda_value       = array();  
+                        
+                foreach($agenda_datas as $agendas){
+    
+                    $agenda_name      = $agendas['name'];
+    
+                    $agenda_id        = $agendas['agenda_id'];
+                    array_push($agenda_name_array,$agenda_name);
+        
+                    $agenda_count = Meeting::where('agenda_id',$agenda_id)->get();
+                    $agenda_count = $agenda_count->count();
+    
+                    array_push($agenda_value,$agenda_count);
+                }   
+           
+
+        }
+          // Agenda Chart end
+
+
+          /********* meeting Chart start *********/ 
+          if($role_id == 3 ){
+
+            $meeting_data   = Meeting::join('users','users.id','=','meetings.from_user_id','left')
+                                        ->select('meetings.from_user_id','meetings.start_date_time')
+                                        ->where('meetings.from_user_id',auth::user()->id)
+                                        ->groupBy('meetings.start_date_time')
                                         ->where('users.role_id','=', 3)
                                         ->get();
-            $meeting_count = array();
-            $meeting_date = array('2021-11-01 ','2021-11-02 ');
-            foreach($meeting_data as $values){
+                                       
+                                      
 
+            
+            // $meeting_date = array();
+            
+            foreach($meeting_data as $values){
+               
                 $user_id       = $values->from_user_id;
                 $start_date    = $values->start_date_time;
-               
+              
+                $meet_date       = Meeting::where("from_user_id",$user_id)
+                                            ->where("start_date_time",$start_date)
+                                            ->groupBy('start_date_time')
+                                            ->get();
+                                          
+                foreach($meet_date as $date){
 
-                $user       = Meeting::where("from_user_id",$user_id)
-                                     ->where("start_date_time",$start_date)
-                                     ->get();
-                $c_count          = $user->count();
-                array_push($meeting_count,$c_count);
-                // echo"<pre>";print_r($user->start_date_time);die;
-                   
-                
+                $set_date = date_create($date->start_date_time);
+                $date_format =  date_format($set_date,"Y-m-d ");
+                $values['x'] = $date_format;
 
-                // $user_id          = $values->to_user_id;
-                // $explode_user_ids = explode(",",$user_id);
+                // array_push($meeting_date,$date_format);
 
-                // $userName         = User::where("id",$user_id)->select("firstName","lastName")->get();
-                // $c                = Meeting::select('*')->whereRaw('FIND_IN_SET("'.$user_id.'",to_user_id)')->get();
-                //$c_count          = $c->count();
+                }
+                $user     = Meeting::where("from_user_id",$user_id)
+                                   ->where("start_date_time",$start_date)
+                                   ->get();
+                $c_count  = $user->count();
+                $values['y'] = $c_count;
+                //  array_push($meetingCount,$c_count);                              
             }
+       $meeting_chart_value = json_encode($meeting_data);
+        }
+
+        if($role_id == 1){
+
+
+            $meeting_data   = Meeting::groupBy('start_date_time')
+                                        ->select('start_date_time')
+                                        ->get();
+
+            foreach($meeting_data as $value){
+                $starting_date    = $value->start_date_time;
+              
+                $meetDate       = Meeting::where("start_date_time",$starting_date)
+                                            ->groupBy('start_date_time')
+                                            ->get();
+                                            
+
+                foreach($meetDate as $date){
+                    $seting_date = date_create($date->start_date_time);
+                    $date_form =  date_format($seting_date,"Y-m-d ");
+                    $value['x'] = $date_form;    
+                    // array_push($meeting_date,$date_format);    
+                }
+                $users     = Meeting::where("start_date_time",$starting_date)->get();
+                $count  = $users->count();
+                $value['y'] = $count;
+            }
+            $meeting_chart_value = json_encode($meeting_data);
+        }
             
-             /***Get matched Alumni in Student View****/
+                  
+            /****** Meeting chart End ******/
+
+
+            /***Get matched Alumni in Student View****/
             $matched_alumni = "";
 
             if($role_id == 3){
@@ -224,10 +298,52 @@ class DashboardController extends Controller
                                                         ->limit(3)
                                                         ->get();
             }
+
+            //$count_interest_id = UserInterestAreas::select('interest_id')->groupBy('interest_id')->get();
+            $count_interest_id_data = UserInterestAreas::join('interest_areas','interest_areas.id','=','user_interest_areas.interest_id','left')
+                                ->select('user_interest_areas.interest_id','interest_areas.interest_area_name')->groupBy('interest_id')->get();
+
+            $slicing=[];
+
+            foreach($count_interest_id_data as $count_interest_ids){
+
+                $interest_ids = $count_interest_ids['interest_id'];
+
+                $interest_area_name = $count_interest_ids['interest_area_name'];
+
+                $count_interest_id = UserInterestAreas::select('interest_id')
+                                                        ->where('interest_id',$interest_ids)
+                                                        ->orderBy('interest_id')
+                                                        ->count();
+
+                $count_interest_ids['interest_area_name'] = $interest_area_name;
+
+                $count_interest_ids['count'] = $count_interest_id;  
+                
+                $sliced = array(
+                    'interest_area_name'=> $interest_area_name,
+                    'count'=> $count_interest_id
+                );
+                array_push($slicing,$sliced);
+            }
+            
+            /******* Get Top 5 InterestAreas*****/
+            usort($slicing, function ($a, $b) { return $b['count'] - $a['count']; });
+            $top5 = array_slice($slicing, 0, 5);
+            //echo "<pre>";print_r($top5);
+
+            /******* Get lowest 5 InterestAreas*****/
+            usort($slicing, function ($previous, $next) { return $previous["count"] > $next["count"] ? 1 : -1; });
+            $low5 = array_slice($slicing, 0, 5);
+
+            //echo "<pre>";print_r($low5);
+            
+            
+            //die;
             return view('admin.dashboard',compact('university_count','graduates_count','alumini_count',
                                                   'booster_count','meeting_count_alum', 'encode','permission_array',
                                                   'users_name','meeting_id','uni_name_array','values_array',
-                                                  'matched_alumni','meeting_count','meeting_date','agenda_name_array','agenda_value'));
+                                                  'matched_alumni','meeting_chart_value','agenda_name_array','agenda_value','top5','low5'));
             
         //}
         /*if(Auth::check()){

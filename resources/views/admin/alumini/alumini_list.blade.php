@@ -45,7 +45,12 @@
             <div class="card">
 
                 <div class="card-body border-bottom">
-
+                    <form method="post" action="{{ route('bulk_upload') }}" enctype="multipart/form-data">
+                    @csrf
+                    <input type="file" class=" @error('bulk_upload') is-invalid @enderror" name="bulk_upload" id="bulk_upload" />
+                    @error('bulk_upload')<div class="invalid-feedback"> {{ $message }} </div>@enderror
+                    <button type="submit" class="btn btn-primary me-1">Import</button>
+                    </form>
                     <!-- <h4 class="card-title">Search & Filter</h4> -->
                     @if(in_array(config('constants.options.CreateAlumini'),$permission_array))
                         <a class="btn btn-icon btn-primary waves-effect waves-float waves-light add-button" href="{{route('alumni.create')}}"><i

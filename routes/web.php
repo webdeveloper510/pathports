@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth:web','permitted']], function () {
 
    /**** Alumini ****/
    Route::resource('alumni','App\Http\Controllers\Admin\AluminiController');
+   Route::post('/bulk_upload', [AluminiController::class, 'bulk_upload'])->name('bulk_upload');
 
    /**** Users ****/
    Route::resource('users','App\Http\Controllers\Admin\UserController');

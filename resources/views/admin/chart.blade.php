@@ -1,70 +1,35 @@
-
+<!DOCTYPE HTML>
 <html>
-  <link
-    rel=
-"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-    type="text/css"
-  />
-  <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script
-    src=
-"https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
-    type="text/javascript"
-  ></script>
-  <script src=
-"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
-  <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
-  <style>
-    
-    /* body {
-      text-align: center;
-      color: green;
-    } */
-    /* h2 {
-      text-align: center;
-      font-family: "Verdana", sans-serif;
-      font-size: 30px;
-    } */
-  </style>
-  <body>
-    <div class="container" style="width: 40%;margin: 15px auto;">
-      <div>
-        <canvas id="agendaChart"></canvas>
-      </div>
-    </div>
-  </body>
-  
-  <script>
-    var ctx = document.getElementById("agendaChart").getContext("2d");
-    var myChart = new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ],
-        datasets: [
-          {
-            label: "work load",
-            data: [2, 9, 3, 17, 6, 3, 7],
-            backgroundColor: "rgba(153,205,1,0.6)",
-            height:"200px",
-          },
-          {
-            label: "free hours",
-            data: [2, 2, 5, 5, 2, 1, 10],
-            backgroundColor: "rgba(155,153,10,0.6)",
-          },
-        ],
-      },
-    });
-  </script>
+<head>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+</head>
+<body>
+<div class="col-md-6">
+                        <div class="card">
+<canvas id="bar-chart" width="800" height="450"></canvas>
+</div></div>
+<script>
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+</script>
+</body>
 </html>
